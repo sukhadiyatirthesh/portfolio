@@ -30,6 +30,10 @@
   </script>
 </head>
 <body>
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
   <!-- NAVIGATION -->
   <nav class="nav" id="nav" role="navigation" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(10px);">
     <div class="nav-inner">
@@ -49,8 +53,10 @@
 
   <main class="blog-post">
     <h1>{{ title }}</h1>
-    <p style="opacity: 0.6; font-size: 0.9rem;">Published on: {{ date | date: "%Y-%m-%d" }}</p>
+    {% if tags contains "blog" %}
+    <p style="opacity: 0.6; font-size: 0.9rem;">Published on: {{ date | date: "%B %d, %Y" }}</p>
     <hr style="margin: 20px 0; border: 1px solid rgba(0,0,0,0.1);">
+    {% endif %}
     
     {{ content }}
     
@@ -82,5 +88,6 @@
       <p>© 2025 Tirthesh Jain. All rights reserved.</p>
     </div>
   </footer>
+  <script src="/script.js" defer></script>
 </body>
 </html>
