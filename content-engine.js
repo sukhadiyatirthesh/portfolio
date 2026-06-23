@@ -31,6 +31,7 @@ async function generateBlog() {
     - Include LSI (Latent Semantic Indexing) keywords naturally.
     - Structure with H1, H2, and H3 tags.
     - Use bullet points, bold text for emphasis, and actionable data-driven strategies.
+    - Include at least one beautiful cover image at the top of the post using this format: ![Cover Image](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80) (You can keep this exact URL, or replace the ID with another valid business/marketing photo ID).
     
     STEP 3: CONVERSION INJECTION
     Inject exactly 2 aggressive "Call to Action" (CTA) sections driving the reader to contact you (Tirthesh Jain) for a free ad account audit or consulting. Link them to the contact section (e.g., "Ready to scale? Contact me today to audit your ad account.").
