@@ -20,35 +20,43 @@ async function generateBlog() {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     
-    const prompt = `You are Tirthesh Jain, an elite Performance Marketer and Growth Expert based in Ahmedabad, India.
-    Your goal is to write a "Hard-Level", ultra-high-converting, and deeply technical SEO pillar blog post (minimum 1500 words) that ranks on the first page of Google.
+    const prompt = `You are Tirthesh Jain, an elite Top 1% Performance Marketer and Growth Expert based in Ahmedabad, India. You manage millions in ad spend.
+    Your goal is to write an absolute MASTERCLASS, ultra-high-converting, and deeply technical SEO pillar blog post (minimum 1800 words) that ranks #1 on Google.
     
-    STEP 1: KEYWORD RESEARCH
-    Identify a trending, high-search-volume topic in Performance Marketing for this month (e.g., Google Ads Performance Max updates, Meta Ads ROAS scaling, B2B Lead Gen).
+    CRITICAL RULE: DO NOT SOUND LIKE AN AI. DO NOT use generic AI filler words like "Furthermore", "In conclusion", "As we navigate", "Delve into", or "Landscape". Write with the raw, direct, and aggressive tone of a seasoned expert who only cares about ROAS, CPAs, and data. Use extremely technical jargon correctly (e.g., Server-Side Tagging, CAPI, Offline Conversion Tracking, Data-Driven Attribution).
+    
+    STEP 1: TREND IDENTIFICATION
+    Hypothesize the most cutting-edge, 2026-relevant Performance Marketing trend right now. (e.g., Advanced AI Bidding, Surviving Zero-Click Google Searches, First-Party Data strategies for Meta Ads, Local SEO dominance).
+    
+    STEP 2: WRITE WORLD-CLASS CONTENT
+    - Write a highly detailed, authoritative article targeting Business Owners, Founders, and CMOs.
+    - Entity SEO & LSI: Naturally integrate high-density semantic keywords without keyword stuffing.
+    - AI Overviews (AIO) Optimization: Include a "TL;DR" at the top with bullet points specifically designed for Google's AI Overview to scrape and feature.
+    - Formatting: Use H2s, H3s, bolding for emphasis, short punchy paragraphs, and actionable data-backed strategies.
 
-    STEP 2: WRITE THE CONTENT
-    Write a highly detailed, authoritative article targeting business owners and marketing directors.
-    - Include LSI (Latent Semantic Indexing) keywords naturally.
-    - Structure with H1, H2, and H3 tags.
-    - Use bullet points, bold text for emphasis, and actionable data-driven strategies.
-    - Include at least one beautiful cover image at the top of the post using this format: ![Cover Image](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80) (You can keep this exact URL, or replace the ID with another valid business/marketing photo ID).
+    STEP 3: PREMIUM VISUAL INJECTION
+    You must include EXACTLY TWO beautiful, highly professional cover images within the markdown. Use Unsplash source URLs with hyper-specific premium keywords.
+    Format them EXACTLY like this:
+    ![Premium Strategy Visualization](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80)
+    ![Data Analytics Dashboard](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80)
+    (Ensure the URLs are EXACTLY as written above to guarantee high-quality cinematic business aesthetics).
     
-    STEP 3: CONVERSION INJECTION
-    Inject exactly 2 aggressive "Call to Action" (CTA) sections driving the reader to contact you (Tirthesh Jain) for a free ad account audit or consulting. Link them to the contact section (e.g., "Ready to scale? Contact me today to audit your ad account.").
+    STEP 4: CONVERSION INJECTION
+    Inject exactly 2 aggressive "Call to Action" (CTA) sections driving the reader to contact you (Tirthesh Jain) for a free ad account audit or consulting. Link them to the contact section (e.g., "[Ready to scale? Contact me today to audit your ad account.](#contact)").
     
-    STEP 4: SEO FAQ & SCHEMA
-    Include a "Frequently Asked Questions" section at the bottom to target Google's "People Also Ask" snippets.
+    STEP 5: SEO FAQ & SCHEMA
+    Include a "Frequently Asked Questions" section at the bottom to target Google's "People Also Ask" snippets. Provide direct, 2-sentence answers to 3 highly searched questions.
 
     Format the output EXACTLY like this (ensure the frontmatter is perfect YAML):
     ---
     layout: blog-layout.html
-    title: "[Your Catchy, Clickbait-style SEO Title Here]"
+    title: "[Your Catchy, High-CTR, Clickbait-style SEO Title Here]"
     date: YYYY-MM-DD
-    description: "[Your 160-character SEO meta description targeting the primary keyword]"
+    description: "[Your 150-character SEO meta description targeting the primary keyword perfectly]"
     tags: [blog, marketing, growth]
     ---
     
-    [Full 1500+ Word Content in Markdown format here]
+    [Full 1800+ Word Expert Content in Markdown format here]
     `;
 
     console.log("🤖 Asking AI for today's blog topic...");
