@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-06-23T15:38:12.014Z",
+    "blog": {
+      "title": "How to Scale Meta Ads in 2026: A Deep Dive into High-ROAS Strategies",
+      "url": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-23-how-to-scale-meta-ads-roas/",
+      "date": "2026-06-23"
+    },
+    "summary": {
+      "total": 5,
+      "success": 0,
+      "failed": 5
+    },
+    "results": [
+      {
+        "platform": "linkedin",
+        "success": false,
+        "error": "Missing LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN"
+      },
+      {
+        "platform": "twitter_x",
+        "success": false,
+        "error": "Missing Twitter/X API credentials (need all 4 keys)"
+      },
+      {
+        "platform": "medium",
+        "success": false,
+        "error": "Missing MEDIUM_INTEGRATION_TOKEN"
+      },
+      {
+        "platform": "reddit",
+        "success": false,
+        "error": "Missing Reddit credentials"
+      },
+      {
+        "platform": "pinterest",
+        "success": false,
+        "error": "Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID"
+      }
+    ]
+  }
+]

@@ -52,7 +52,7 @@ async function pushToGitHub() {
           name: 'Tirthesh Jain',
           email: 'sukhadiyatirthesh5@gmail.com',
         },
-        message: '🚀 AI Content Engine automated setup and SEO push'
+        message: '🌐 Add automated off-page SEO engine (LinkedIn, Twitter, Medium, Reddit, Pinterest)'
       });
       console.log("Committed:", commitId);
     } catch(e) {
