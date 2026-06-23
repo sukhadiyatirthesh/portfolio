@@ -1,0 +1,64 @@
+---
+layout: blog-layout.html
+title: "Latest SEO & Performance Marketing Insights"
+description: "Read the latest thoughts, strategies, and deep dives on Performance Marketing and Growth."
+---
+
+<style>
+  .blog-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+  }
+  .blog-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .blog-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .blog-card a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  .blog-card a:hover {
+    text-decoration: underline;
+  }
+  .blog-meta {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+  }
+  .blog-desc {
+    margin-bottom: 0;
+  }
+</style>
+
+<div class="blog-list-container">
+  <p>Welcome to the blog! Here you will find ultra-actionable strategies on scaling Meta Ads, Google Ads, and local SEO.</p>
+
+  <ul class="blog-list">
+    {% for post in collections.blog | reverse %}
+      <li class="blog-card">
+        <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <div class="blog-meta">
+          <span>📅 {{ post.date | date: "%B %d, %Y" }}</span>
+        </div>
+        <p class="blog-desc">{{ post.data.description }}</p>
+      </li>
+    {% else %}
+      <li class="blog-card">
+        <p>No blog posts yet. The AI Content Engine is preparing the first pillar article!</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
