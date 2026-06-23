@@ -376,6 +376,41 @@ async function postToReddit(blog) {
   return { platform: 'reddit', success: true, subreddits: subredditResults };
 }
 
+// ── PLATFORM 6: DEV.TO ────────────────────────────────────────────────────────
+async function postToDevTo(blog) {
+  const apiKey = process.env.DEV_TO_API_KEY;
+  if (!apiKey) throw new Error('Missing DEV_TO_API_KEY');
+
+  if (DRY_RUN) return { platform: 'devto', success: true, dry: true };
+
+  const content = `> *Originally published on [Tirthesh Jain's Portfolio](${blog.url})*\n\n---\n\n${blog.body}`;
+
+  const res = await fetch('https://dev.to/api/articles', {
+    method: 'POST',
+    headers: {
+      'api-key': apiKey,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      article: {
+        title: blog.title,
+        published: true,
+        body_markdown: content,
+        tags: ['marketing', 'seo', 'growth', 'ppc'],
+        canonical_url: blog.url
+      }
+    })
+  });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Dev.to publish ${res.status}: ${err}`);
+  }
+
+  const data = await res.json();
+  return { platform: 'devto', success: true, url: data.url, canonicalUrl: blog.url };
+}
+
 // ── PLATFORM 5: PINTEREST ─────────────────────────────────────────────────────
 async function postToPinterest(blog) {
   const token   = process.env.PINTEREST_ACCESS_TOKEN;
@@ -453,6 +488,7 @@ async function run() {
     { name: 'LinkedIn',    emoji: '💼', fn: () => postToLinkedIn(blog)  },
     { name: 'Twitter/X',  emoji: '🐦', fn: () => postToTwitter(blog)   },
     { name: 'Medium',     emoji: '📰', fn: () => postToMedium(blog)    },
+    { name: 'Dev.to',     emoji: '👨‍💻', fn: () => postToDevTo(blog)     },
     { name: 'Reddit',     emoji: '🔖', fn: () => postToReddit(blog)    },
     { name: 'Pinterest',  emoji: '📌', fn: () => postToPinterest(blog) }
   ];
