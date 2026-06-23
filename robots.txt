@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tirthesh-jain-portfolio.netlify.app/sitemap.xml
+Sitemap: https://tirthesh-jain-portfolio.vercel.app/sitemap.xml
