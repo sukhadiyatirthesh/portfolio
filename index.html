@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- PRIMARY SEO META TAGS -->
   <meta name="google-site-verification" content="heN2ajuzDD6nN-g0CSfhBP0MXHzplH3FtmfuNdZ788M" />
@@ -13,7 +13,7 @@
   <meta name="keywords"
     content="Best performance marketer near me, top performance marketer Ahmedabad, Paid Media Specialist, Google Ads expert, Meta Ads expert, PPC specialist, Growth Marketing India" />
   <meta name="author" content="Tirthesh Jain" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://tirthesh-jain-portfolio.vercel.app/" />
 
   <!-- OPEN GRAPH / FACEBOOK -->
@@ -59,23 +59,20 @@
   }
   </script>
 
+  <!-- FONTS: Non-render-blocking via preconnect + link (NOT CSS @import) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- Google tag (gtag.js) - Placeholder for Analytics -->
+
+  <!-- Google Analytics (SINGLE INSTANCE — was duplicated before) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  <!-- Google tag (gtag.js) - Placeholder for Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX');
   </script>
@@ -990,7 +987,7 @@
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="90" style="--bar-color:#22c55e"></div>
             </div>
-          </div>
+          </div>,
           <div class="skill-bar-item">
             <div class="skill-bar-header">
               <span class="skill-bar-name">ROAS & CPA Optimization</span>

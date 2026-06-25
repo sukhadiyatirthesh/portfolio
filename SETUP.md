@@ -5,6 +5,23 @@ After that, everything runs **fully automatically** — zero human input require
 
 ---
 
+## ⚡ What Changed (v2.0 → v3.0)
+
+| Feature | Before (v2.0) | Now (v3.0) |
+|---|---|---|
+| Blog Frequency | Every 2 days | **DAILY** (12 AM UTC / 5:30 AM IST) |
+| Word Count | ~1800 words | **2500+ words** (Google rewards depth) |
+| SEO Level | Basic | **Nuclear** (E-E-A-T, AIO, Schema, NLP) |
+| Topic System | Random | **Smart rotation** (never repeats) |
+| Internal Linking | None | **Auto-links last 5 posts** |
+| Sitemap | Static | **Auto-updates after every post** |
+| Search Engine Ping | None | **Pings Google + Bing after each post** |
+| Schema Markup | None | **Article + Breadcrumb + FAQ Schema** |
+| Blog Template | Basic | **Share buttons, author box, breadcrumbs** |
+| Duplicate Prevention | None | **Skips if blog already exists for today** |
+
+---
+
 ## How to Add Secrets to GitHub
 
 1. Go to your repo → **Settings** → **Secrets and variables** → **Actions**
@@ -124,26 +141,49 @@ After that, everything runs **fully automatically** — zero human input require
 
 After adding all secrets, test it:
 
-1. Go to **GitHub → Actions → "🌐 Off-Page SEO Auto-Distributor"**
-2. Click **"Run workflow"** → set `dry_run = true` first
-3. Check logs — all platforms should show `✅`
-4. Then run again with `dry_run = false` for a real test
+1. Go to **GitHub → Actions → "🤖 Daily AI Blog Auto-Publisher"**
+2. Click **"Run workflow"** to manually trigger
+3. Check logs — new blog should be committed with updated sitemap
+4. Go to **Actions → "🌐 Off-Page SEO Auto-Distributor"**
+5. Run with `dry_run = true` first to test social distribution
+6. Then run again with `dry_run = false` for a real test
 
 ---
 
-## How the Full Automation Flow Works
+## How the Full Automation Flow Works (v3.0)
 
 ```
-Every 2 days at 10 AM UTC:
+Every day at 12:00 AM UTC (5:30 AM IST):
   │
   ▼
-ai-blog-generator.yml → content-engine.js → Gemini writes blog → commits to /blog/
+🤖 ai-blog-generator.yml
+  │
+  ├─→ content-engine.js
+  │     ├─ Picks unique topic (smart rotation, never repeats)
+  │     ├─ Gemini writes 2500+ word SEO pillar article
+  │     │    ├─ E-E-A-T signals injected
+  │     │    ├─ AI Overview (AIO) optimization
+  │     │    ├─ Internal links to last 5 posts
+  │     │    ├─ FAQ schema targeting
+  │     │    └─ 3 CTAs injected
+  │     ├─ Auto-updates sitemap.xml
+  │     └─ Skips if blog already exists (duplicate protection)
+  │
+  ├─→ Commits blog + sitemap to GitHub
+  ├─→ Pings Google & Bing with updated sitemap
   │
   ▼ (triggers automatically)
-off-page-seo.yml → social-engine.js → Posts to all 5 platforms
+🌐 off-page-seo.yml → social-engine.js
+  │
+  ├─→ LinkedIn post
+  ├─→ Twitter/X tweet
+  ├─→ Medium crosspost (with canonical backlink)
+  ├─→ Dev.to crosspost (with canonical backlink)
+  ├─→ Reddit (r/PPC, r/digital_marketing, r/marketing)
+  └─→ Pinterest pin
   │
   ▼
-distribution-log.json updated → committed to GitHub
+📊 distribution-log.json updated → committed to GitHub
 ```
 
-**Zero human action required after initial setup.**
+**Zero human action required after initial setup. DAILY content machine. 🚀**

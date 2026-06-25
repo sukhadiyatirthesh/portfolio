@@ -52,7 +52,7 @@ async function pushToGitHub() {
           name: 'Tirthesh Jain',
           email: 'sukhadiyatirthesh5@gmail.com',
         },
-        message: '🌐 Add automated off-page SEO engine (LinkedIn, Twitter, Medium, Reddit, Pinterest)'
+        message: '🚀 v3.0: Daily blog + nuclear SEO + PageSpeed optimization + off-page distribution'
       });
       console.log("Committed:", commitId);
     } catch(e) {
