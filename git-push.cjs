@@ -52,7 +52,7 @@ async function pushToGitHub() {
           name: 'Tirthesh Jain',
           email: 'sukhadiyatirthesh5@gmail.com',
         },
-        message: '🖼️ Added automated AI image generation for SEO blog content'
+        message: '📸 Forced ultra-realistic DSLR photography style & banned AI text in generated blog images'
       });
       console.log("Committed:", commitId);
     } catch(e) {

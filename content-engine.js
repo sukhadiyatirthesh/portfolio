@@ -269,15 +269,16 @@ Your goal is to write THE definitive, Google #1 ranking, ultra-high-converting S
 9. INTERNAL LINKING:
 ${internalLinksContext || '   - No previous posts available yet — skip internal links'}
 
-10. IMAGE OPTIMIZATION (AI GENERATED VISUALS):
-    Include EXACTLY TWO images with SEO-optimized alt text, using this dynamic AI image generation API.
+10. IMAGE OPTIMIZATION (ULTRA-REALISTIC VISUALS):
+    Include EXACTLY TWO images with SEO-optimized alt text.
     Format your image links exactly like this:
-    ![SEO-optimized alt text](https://image.pollinations.ai/prompt/Detailed-Visual-Prompt-Here-Using-Hyphens?width=1200&height=630&nologo=true)
+    ![SEO-optimized alt text](https://image.pollinations.ai/prompt/Detailed-Visual-Prompt-Here?width=1200&height=630&nologo=true)
     
     CRITICAL INSTRUCTIONS FOR IMAGES:
-    - Replace "Detailed-Visual-Prompt-Here-Using-Hyphens" with a highly descriptive prompt for the image.
-    - Use HYPHENS (-) instead of spaces in the prompt URL. No spaces allowed.
-    - Make the visual prompts highly engaging (e.g., "futuristic-performance-marketing-dashboard-neon", "professional-digital-marketer-analyzing-growth-charts").
+    - Replace "Detailed-Visual-Prompt-Here" with a highly descriptive prompt. Use HYPHENS (-) instead of spaces.
+    - MAKE IT LOOK REAL: Append "-shot-on-dslr-85mm-lens-cinematic-lighting-ultra-realistic-photography" to the end of every prompt.
+    - NO FAKE AI LOOK: Do NOT ask for "futuristic", "cyberpunk", or "3d render". Ask for real-world scenarios (e.g., "professional-marketing-team-analyzing-data-in-modern-office-shot-on-dslr").
+    - ABSOLUTELY NO TEXT: AI struggles with text. Add "-no-text-no-words-no-fonts" to the prompt so the images don't have weird garbled alien language on them.
     - Place one image after the introduction and the second image in the middle of the post.
 
 11. CTA INJECTION (CONVERSION OPTIMIZATION):
