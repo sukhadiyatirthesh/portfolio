@@ -269,10 +269,16 @@ Your goal is to write THE definitive, Google #1 ranking, ultra-high-converting S
 9. INTERNAL LINKING:
 ${internalLinksContext || '   - No previous posts available yet — skip internal links'}
 
-10. IMAGE OPTIMIZATION:
-    Include EXACTLY TWO images with SEO-optimized alt text:
-    ![Performance Marketing Strategy Dashboard 2026](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80)
-    ![Data Analytics and ROI Tracking](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80)
+10. IMAGE OPTIMIZATION (AI GENERATED VISUALS):
+    Include EXACTLY TWO images with SEO-optimized alt text, using this dynamic AI image generation API.
+    Format your image links exactly like this:
+    ![SEO-optimized alt text](https://image.pollinations.ai/prompt/Detailed-Visual-Prompt-Here-Using-Hyphens?width=1200&height=630&nologo=true)
+    
+    CRITICAL INSTRUCTIONS FOR IMAGES:
+    - Replace "Detailed-Visual-Prompt-Here-Using-Hyphens" with a highly descriptive prompt for the image.
+    - Use HYPHENS (-) instead of spaces in the prompt URL. No spaces allowed.
+    - Make the visual prompts highly engaging (e.g., "futuristic-performance-marketing-dashboard-neon", "professional-digital-marketer-analyzing-growth-charts").
+    - Place one image after the introduction and the second image in the middle of the post.
 
 11. CTA INJECTION (CONVERSION OPTIMIZATION):
     - Include exactly 3 CTAs spread across the article (top, middle, bottom)
