@@ -19,7 +19,14 @@ const SITE_URL = 'https://tirthesh-jain-portfolio.vercel.app';
 
 // ── RETRY WITH BACKOFF ────────────────────────────────────────────────────────
 async function generateWithRetry(prompt, maxRetries = 3) {
-  const models = ['gemini-2.0-flash', 'gemini-2.0-flash-lite'];
+  const models = [
+    'gemini-2.0-flash', 
+    'gemini-2.0-flash-lite',
+    'gemini-1.5-pro',
+    'gemini-1.5-flash',
+    'gemini-1.5-flash-8b',
+    'gemini-1.0-pro'
+  ];
   
   for (const modelName of models) {
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
