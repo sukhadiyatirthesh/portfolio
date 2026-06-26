@@ -276,8 +276,9 @@ ${internalLinksContext || '   - No previous posts available yet — skip interna
     
     CRITICAL INSTRUCTIONS FOR IMAGES:
     - Replace "Detailed-Visual-Prompt-Here" with a highly descriptive prompt. Use HYPHENS (-) instead of spaces.
+    - NO HUMANS ALLOWED: AI struggles with human anatomy (extra fingers, weird faces). Do NOT include people, hands, or faces in the prompt. Focus entirely on objects, environments, dashboards, charts, laptops, or abstract concepts.
     - MAKE IT LOOK REAL: Append "-shot-on-dslr-85mm-lens-cinematic-lighting-ultra-realistic-photography" to the end of every prompt.
-    - NO FAKE AI LOOK: Do NOT ask for "futuristic", "cyberpunk", or "3d render". Ask for real-world scenarios (e.g., "professional-marketing-team-analyzing-data-in-modern-office-shot-on-dslr").
+    - NO FAKE AI LOOK: Do NOT ask for "futuristic", "cyberpunk", or "3d render". Ask for real-world scenarios (e.g., "glowing-marketing-dashboard-on-laptop-screen-in-dark-office-shot-on-dslr").
     - ABSOLUTELY NO TEXT: AI struggles with text. Add "-no-text-no-words-no-fonts" to the prompt so the images don't have weird garbled alien language on them.
     - Place one image after the introduction and the second image in the middle of the post.
 

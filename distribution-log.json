@@ -1,5 +1,51 @@
 [
   {
+    "timestamp": "2026-06-26T15:34:12.499Z",
+    "blog": {
+      "title": "Meta Ads Cost-Per-Lead Optimization: From ₹500 CPL to ₹80 CPL",
+      "url": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-26-meta-ads-cost-per-lead-optimization/",
+      "date": "2026-06-26"
+    },
+    "summary": {
+      "total": 6,
+      "success": 1,
+      "failed": 5
+    },
+    "results": [
+      {
+        "platform": "linkedin",
+        "success": false,
+        "error": "Missing LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN"
+      },
+      {
+        "platform": "twitter_x",
+        "success": false,
+        "error": "Missing Twitter/X API credentials (need all 4 keys)"
+      },
+      {
+        "platform": "medium",
+        "success": false,
+        "error": "Missing MEDIUM_INTEGRATION_TOKEN"
+      },
+      {
+        "platform": "devto",
+        "success": true,
+        "url": "https://dev.to/sukhadiyatirthesh/meta-ads-cost-per-lead-optimization-from-500-cpl-to-80-cpl-4pip",
+        "canonicalUrl": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-26-meta-ads-cost-per-lead-optimization/"
+      },
+      {
+        "platform": "reddit",
+        "success": false,
+        "error": "Missing Reddit credentials"
+      },
+      {
+        "platform": "pinterest",
+        "success": false,
+        "error": "Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-25T11:21:04.589Z",
     "blog": {
       "title": "Meta Ads Advantage+ Shopping: The 2026 Complete Scaling Framework",
