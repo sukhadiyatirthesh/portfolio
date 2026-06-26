@@ -1,5 +1,51 @@
 [
   {
+    "timestamp": "2026-06-25T11:21:04.589Z",
+    "blog": {
+      "title": "Meta Ads Advantage+ Shopping: The 2026 Complete Scaling Framework",
+      "url": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-25-meta-ads-advantage-shopping/",
+      "date": "2026-06-25"
+    },
+    "summary": {
+      "total": 6,
+      "success": 1,
+      "failed": 5
+    },
+    "results": [
+      {
+        "platform": "linkedin",
+        "success": false,
+        "error": "Missing LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN"
+      },
+      {
+        "platform": "twitter_x",
+        "success": false,
+        "error": "Missing Twitter/X API credentials (need all 4 keys)"
+      },
+      {
+        "platform": "medium",
+        "success": false,
+        "error": "Missing MEDIUM_INTEGRATION_TOKEN"
+      },
+      {
+        "platform": "devto",
+        "success": true,
+        "url": "https://dev.to/sukhadiyatirthesh/meta-ads-advantage-shopping-the-2026-complete-scaling-framework-14oh",
+        "canonicalUrl": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-25-meta-ads-advantage-shopping/"
+      },
+      {
+        "platform": "reddit",
+        "success": false,
+        "error": "Missing Reddit credentials"
+      },
+      {
+        "platform": "pinterest",
+        "success": false,
+        "error": "Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-25T11:01:49.183Z",
     "blog": {
       "title": "Local SEO Domination: How to Rank #1 in 'Near Me' Searches in 2026",
