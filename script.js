@@ -490,18 +490,18 @@ function initAnimations() {
       submitBtn.disabled = true;
     }
 
-    fetch('https://formsubmit.co/ajax/sukhadiyatirthesh5@gmail.com', {
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        Name: name,
-        Email: email,
-        Subject: subject,
-        Message: message,
-        _template: 'box' // Makes the email look nice
+        access_key: 'bcde560d-30e3-4e4d-9dfa-26556296d1a7',
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
       })
     })
     .then(response => response.json())
