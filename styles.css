@@ -245,10 +245,12 @@ body:has(button:hover) .cursor {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
+  background: rgba(9, 9, 11, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  min-width: 220px;
+  min-width: 260px;
   padding: 8px;
   display: flex;
   flex-direction: column;
