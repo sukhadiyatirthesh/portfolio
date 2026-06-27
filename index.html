@@ -66,7 +66,8 @@
   <link rel="dns-prefetch" href="https://images.unsplash.com" />
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" rel="stylesheet" /></noscript>
   <style>{% include "styles.css" %}</style>
 
   <!-- Google Analytics (SINGLE INSTANCE — was duplicated before) -->
@@ -1338,14 +1339,14 @@
             <button type="submit" class="btn btn-primary btn-full magnetic-btn" id="form-submit-btn">
               🚀 Let's Build Growth Together
             </button>
-            <div class="form-success" id="form-success" role="alert" aria-live="polite" hidden>
+            <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               Message sent! I'll get back to you within 24 hours.
             </div>
-            <div class="form-error" id="form-error" role="alert" aria-live="polite" hidden>
+            <div class="form-error" id="form-error" role="status" aria-live="polite" hidden>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <circle cx="12" cy="12" r="10" />
@@ -1433,7 +1434,7 @@
     </svg>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

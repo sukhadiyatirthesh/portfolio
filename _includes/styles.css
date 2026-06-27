@@ -18,8 +18,8 @@
   --primary-dark: #1d4ed8;
   --secondary: #FBBF24;
   --text: #FFFFFF;
-  --text-muted: #888888;
-  --text-subtle: #555555;
+  --text-muted: #A3A3A3;
+  --text-subtle: #737373;
   --border: rgba(255,255,255,0.06);
   --border-hover: rgba(255,255,255,0.12);
   --glass-bg: rgba(255,255,255,0.03);
@@ -114,7 +114,7 @@ button {
   pointer-events: none;
   z-index: 10000;
   transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
+  transition: transform 0.2s, background 0.2s;
   mix-blend-mode: difference;
 }
 
@@ -128,7 +128,7 @@ button {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.15s ease, height 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
 @media (max-width: 768px) {
@@ -139,8 +139,7 @@ button {
 
 body:has(a:hover) .cursor,
 body:has(button:hover) .cursor {
-  width: 20px;
-  height: 20px;
+  transform: translate(-50%, -50%) scale(1.66);
   background: var(--secondary);
 }
 
