@@ -8,8 +8,7 @@
   <title>{{ pageData.title }}</title>
   <meta name="description" content="{{ pageData.description }}" />
   <meta name="author" content="Tirthesh Jain" />
-  <link rel="webmcp" href="/webmcp.json" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/" />
   
   <!-- OPEN GRAPH / FACEBOOK -->
@@ -250,7 +249,7 @@
       </div>
       
       <div class="seo-hero-form reveal-up" style="transition-delay: 0.2s;">
-        <form data-webmcp-form="contact" class="contact-form glass" action="https://api.web3forms.com/submit" method="POST">
+        <form toolname="book_consultation" tooldescription="Submit a contact form to get in touch with Tirthesh Jain for marketing services." class="contact-form glass" action="https://api.web3forms.com/submit" method="POST">
           <input data-webmcp-input type="hidden" name="access_key" value="bcde560d-30e3-4e4d-9dfa-26556296d1a7">
           <input data-webmcp-input type="hidden" name="subject" value="New Inquiry from {{ pageData.city }} SEO Page">
           <input data-webmcp-input type="hidden" name="redirect" value="https://tirthesh-jain-portfolio.vercel.app/thank-you/">

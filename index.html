@@ -15,8 +15,7 @@
   <meta name="author" content="Tirthesh Jain" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://tirthesh-jain-portfolio.vercel.app/" />
-  <link rel="webmcp" href="/webmcp.json" />
-
+  
   <!-- OPEN GRAPH / FACEBOOK -->
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://tirthesh-jain-portfolio.vercel.app/" />
@@ -1315,21 +1314,21 @@
           </div>
         </div>
         <div class="contact-right reveal-right">
-          <form data-webmcp-form="contact" class="contact-form glass" id="contact-form" novalidate aria-label="Contact form">
+          <form toolname="book_consultation" tooldescription="Submit a contact form to get in touch with Tirthesh Jain for marketing services." class="contact-form glass" id="contact-form" novalidate aria-label="Contact form">
             <h3 class="form-title">Send a Message</h3>
             <div class="form-group">
               <label for="contact-name" class="form-label">Your Name</label>
-              <input data-webmcp-input type="text" id="contact-name" name="name" class="form-input" placeholder="John Smith" required
+              <input toolparamdescription="The user's full name" type="text" id="contact-name" name="name" class="form-input" placeholder="John Smith" required
                 aria-required="true" autocomplete="name" />
             </div>
             <div class="form-group">
               <label for="contact-email" class="form-label">Email Address</label>
-              <input data-webmcp-input type="email" id="contact-email" name="email" class="form-input" placeholder="john@company.com"
+              <input toolparamdescription="The user's email address" type="email" id="contact-email" name="email" class="form-input" placeholder="john@company.com"
                 required aria-required="true" autocomplete="email" />
             </div>
             <div class="form-group">
               <label for="contact-company" class="form-label">Company / Organization</label>
-              <input data-webmcp-input type="text" id="contact-company" name="company" class="form-input" placeholder="Your Company"
+              <input toolparamdescription="The user's company name" type="text" id="contact-company" name="company" class="form-input" placeholder="Your Company"
                 autocomplete="organization" />
             </div>
             <div class="form-group">
@@ -1350,7 +1349,7 @@
             </div>
             <div class="form-group">
               <label for="contact-message" class="form-label">Message</label>
-              <textarea data-webmcp-input id="contact-message" name="message" class="form-textarea" rows="4"
+              <textarea toolparamdescription="The message or inquiry" id="contact-message" name="message" class="form-textarea" rows="4"
                 placeholder="Tell me about the opportunity…" required aria-required="true"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-full magnetic-btn" id="form-submit-btn">
