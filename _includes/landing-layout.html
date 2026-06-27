@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- PRIMARY SEO -->
+  <title>{{ pageData.title }}</title>
+  <meta name="description" content="{{ pageData.description }}" />
+  <meta name="author" content="Tirthesh Jain" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/" />
+  
+  <!-- OPEN GRAPH / FACEBOOK -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/" />
+  <meta property="og:title" content="{{ pageData.title }}" />
+  <meta property="og:description" content="{{ pageData.description }}" />
+  <meta property="og:site_name" content="Tirthesh Jain — Performance Marketer" />
+  <meta property="og:locale" content="en_IN" />
+  
+  <!-- LOCAL BUSINESS SCHEMA.ORG (CRITICAL FOR "NEAR ME" SEARCHES) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Tirthesh Jain - {{ pageData.serviceShort }} in {{ pageData.city }}",
+    "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800",
+    "description": "{{ pageData.description }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ pageData.city }}",
+      "addressCountry": "IN"
+    },
+    "url": "https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/",
+    "telephone": "+917383855518",
+    "email": "sukhadiyatirthesh5@gmail.com",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- FONTS & STYLES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <noscript>
+    <style>
+      .reveal-up, .reveal-left, .reveal-right { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+  <style>
+    .seo-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+    }
+    .seo-hero-content {
+      flex: 1;
+      padding-right: 40px;
+    }
+    .seo-hero-form {
+      flex: 0 0 450px;
+    }
+    .seo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .seo-headline {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      font-family: var(--font-heading);
+      letter-spacing: -1.5px;
+    }
+    .seo-subheadline {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+    .seo-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px;
+      display: grid;
+      gap: 16px;
+    }
+    .seo-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 500;
+    }
+    .seo-features svg {
+      color: #10b981;
+      flex-shrink: 0;
+    }
+    
+    .seo-mesh {
+      padding: 80px 0;
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+    }
+    .seo-mesh-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .seo-mesh-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .seo-mesh-link:hover {
+      color: var(--primary);
+    }
+    
+    @media (max-width: 900px) {
+      .seo-hero {
+        flex-direction: column;
+        padding-top: 120px;
+        text-align: center;
+      }
+      .seo-hero-content {
+        padding-right: 0;
+        margin-bottom: 60px;
+      }
+      .seo-hero-form {
+        width: 100%;
+        flex: auto;
+      }
+      .seo-features {
+        text-align: left;
+        display: inline-block;
+      }
+      .seo-headline { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav" role="navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="logo-mark">TJ</span>
+        <span class="logo-text">Tirthesh Jain</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/blog/" class="nav-link">Blog</a></li>
+      </ul>
+      <a href="/#contact" class="btn btn-primary btn-sm nav-cta">
+        Book Consultation
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="seo-hero container">
+      <div class="seo-hero-content reveal-up">
+        <div class="seo-badge">
+          <span class="badge-dot" style="background:#10b981;"></span>
+          #1 {{ pageData.serviceShort }} in {{ pageData.city }}
+        </div>
+        <h1 class="seo-headline">
+          Scale Your Business in {{ pageData.city }} with <span class="gradient-text">Expert {{ pageData.service }}</span>
+        </h1>
+        <p class="seo-subheadline">
+          Stop wasting ad spend. Partner with Ahmedabad's top performance marketer to drive high-quality leads, lower your CPA, and maximize your ROI across {{ pageData.city }}.
+        </p>
+        <ul class="seo-features">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Data-driven {{ pageData.service }} strategies
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Focus on ROAS and lowering CPA
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Advanced tracking and custom analytics setup
+          </li>
+        </ul>
+      </div>
+      
+      <div class="seo-hero-form reveal-up" style="transition-delay: 0.2s;">
+        <form class="contact-form glass" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms Access Key (Replace with your actual key from web3forms.com) -->
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="New Inquiry from {{ pageData.city }} SEO Page">
+          <input type="hidden" name="redirect" value="https://tirthesh-jain-portfolio.vercel.app/">
+          
+          <h3 class="form-title" style="margin-bottom: 8px;">Get Your Free Audit</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom: 24px;">Find out exactly why your current campaigns aren't converting.</p>
+          
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Monthly Ad Spend</label>
+            <select name="ad_spend" class="form-select" required>
+              <option value="" disabled selected>Select Budget...</option>
+              <option value="under-1L">Under ₹1 Lakh</option>
+              <option value="1L-5L">₹1 Lakh - ₹5 Lakh</option>
+              <option value="5L-10L">₹5 Lakh - ₹10 Lakh</option>
+              <option value="10L+">₹10 Lakh+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Request Audit</button>
+        </form>
+      </div>
+    </section>
+    
+    {{ content }}
+
+    <!-- INTERNAL LINKING MESH (CRITICAL FOR SEO) -->
+    <section class="seo-mesh">
+      <div class="container">
+        <h2 style="font-size: 1.5rem; margin-bottom: 8px;">Top Locations for {{ pageData.service }}</h2>
+        <p style="color:var(--text-muted); font-size:0.95rem;">Explore our digital marketing services across major Indian cities.</p>
+        <div class="seo-mesh-grid">
+          {% for item in pSEO %}
+            {% if item.service == pageData.service %}
+              <a href="/services/{{ item.slug }}/" class="seo-mesh-link">{{ item.serviceShort }} in {{ item.city }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="/" class="footer-logo">Tirthesh Jain</a>
+        <p class="footer-desc">Performance Marketing & Paid Media Specialist.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://www.linkedin.com/in/tirthesh-jain-a5136a274" target="_blank" class="footer-social">LinkedIn</a>
+        <a href="mailto:sukhadiyatirthesh5@gmail.com" class="footer-social">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>

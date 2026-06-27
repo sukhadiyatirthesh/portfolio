@@ -36,6 +36,19 @@ for (const f of files) {
   </url>`;
 }
 
+// Add Programmatic SEO Pages
+import pSEO from './_data/pSEO.js';
+const seoPages = pSEO();
+for (const page of seoPages) {
+  urls += `
+  <url>
+    <loc>${SITE_URL}/services/${page.slug}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>`;
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
