@@ -12,9 +12,19 @@ export default function() {
   ];
 
   const cities = [
+    // Original 15
     "Ahmedabad", "Mumbai", "Delhi", "Bangalore", "Pune", 
     "Hyderabad", "Chennai", "Kolkata", "Surat", "Jaipur", 
-    "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane"
+    "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane",
+    // 10 Global Top Tier
+    "New-York", "London", "Dubai", "Sydney", "Toronto", 
+    "Singapore", "Los-Angeles", "Chicago", "Melbourne", "Brisbane",
+    // 25 More Tier-2/Tier-3 Indian Cities
+    "Bhopal", "Visakhapatnam", "Patna", "Vadodara", "Ghaziabad",
+    "Ludhiana", "Agra", "Nashik", "Faridabad", "Meerut",
+    "Rajkot", "Kalyan", "Varanasi", "Srinagar", "Aurangabad",
+    "Dhanbad", "Amritsar", "Navi-Mumbai", "Allahabad", "Ranchi",
+    "Howrah", "Coimbatore", "Jabalpur", "Gwalior", "Vijayawada"
   ];
 
   const pages = [];

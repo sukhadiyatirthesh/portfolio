@@ -20,12 +20,10 @@ const SITE_URL = 'https://tirthesh-jain-portfolio.vercel.app';
 // ── RETRY WITH BACKOFF ────────────────────────────────────────────────────────
 async function generateWithRetry(prompt, maxRetries = 3) {
   const models = [
+    'gemini-1.5-flash',
     'gemini-2.0-flash', 
     'gemini-2.0-flash-lite',
-    'gemini-1.5-pro',
-    'gemini-1.5-flash',
-    'gemini-1.5-flash-8b',
-    'gemini-1.0-pro'
+    'gemini-1.5-flash-8b'
   ];
   
   for (const modelName of models) {
@@ -280,8 +278,8 @@ ${internalLinksContext || '   - No previous posts available yet — skip interna
 10. UI/UX & DATA VISUALIZATION (NO IMAGES):
     DO NOT generate or include any images or image links. Instead, use advanced Markdown to create a stunning UI/UX experience:
     - Use Markdown Tables: Include at least TWO detailed comparison tables (e.g., "Before vs After", "Cost vs ROI", "Tool Comparisons").
-    - Use Alert Blocks: Use blockquotes for critical warnings and pro-tips (e.g., `> ⚠️ **CRITICAL WARNING:** ...` or `> 💡 **PRO TIP:** ...`).
-    - Use Horizontal Rules (`---`) to separate major sections visually.
+    - Use Alert Blocks: Use blockquotes for critical warnings and pro-tips (e.g., '> ⚠️ **CRITICAL WARNING:** ...' or '> 💡 **PRO TIP:** ...').
+    - Use Horizontal Rules ('---') to separate major sections visually.
     - Use Bold and Italic text aggressively to highlight key metrics and KPIs.
     - Create a "Quick Summary Metrics" bulleted list at the very top of the article.
 
