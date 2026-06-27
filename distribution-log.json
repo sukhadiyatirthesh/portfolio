@@ -1,5 +1,50 @@
 [
   {
+    "timestamp": "2026-06-26T15:39:31.767Z",
+    "blog": {
+      "title": "Meta Ads Cost-Per-Lead Optimization: From ₹500 CPL to ₹80 CPL",
+      "url": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-26-meta-ads-cost-per-lead-optimization/",
+      "date": "2026-06-26"
+    },
+    "summary": {
+      "total": 6,
+      "success": 0,
+      "failed": 6
+    },
+    "results": [
+      {
+        "platform": "linkedin",
+        "success": false,
+        "error": "Missing LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN"
+      },
+      {
+        "platform": "twitter_x",
+        "success": false,
+        "error": "Missing Twitter/X API credentials (need all 4 keys)"
+      },
+      {
+        "platform": "medium",
+        "success": false,
+        "error": "Missing MEDIUM_INTEGRATION_TOKEN"
+      },
+      {
+        "platform": "dev.to",
+        "success": false,
+        "error": "Dev.to publish 422: {\"error\":\"Canonical url has already been taken. Email support@dev.to for further details.\",\"status\":422}"
+      },
+      {
+        "platform": "reddit",
+        "success": false,
+        "error": "Missing Reddit credentials"
+      },
+      {
+        "platform": "pinterest",
+        "success": false,
+        "error": "Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-26T15:34:12.499Z",
     "blog": {
       "title": "Meta Ads Cost-Per-Lead Optimization: From ₹500 CPL to ₹80 CPL",

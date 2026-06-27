@@ -198,9 +198,17 @@ ${urls}
   console.log(`🗺️  Sitemap updated with ${files.length} blog posts`);
 }
 
-// ── MAIN BLOG GENERATOR ──────────────────────────────────────────────────────
+// ── MAIN BLOG GENERATOR (2 POSTS PER DAY) ───────────────────────────────────
 async function generateBlog() {
   try {
+    const POSTS_PER_DAY = 2;
+    let postsCreated = 0;
+    
+    console.log(`\n═══════════════════════════════════════════`);
+    console.log(`  🚀 GENERATING ${POSTS_PER_DAY} BLOG POSTS TODAY`);
+    console.log(`═══════════════════════════════════════════\n`);
+
+    for (let postNum = 1; postNum <= POSTS_PER_DAY; postNum++) {
     const todaysTopic = getTopicForToday();
     const existingPosts = getExistingBlogLinks();
     const internalLinksContext = existingPosts.length > 0
@@ -317,7 +325,7 @@ canonical: "${SITE_URL}/blog/${today}-SLUG/"
 IMPORTANT: Replace SLUG in the canonical URL with the actual slug derived from your title.
 Output ONLY the markdown with frontmatter. No explanations, no preamble.`;
 
-    console.log(`\n🎯 Today's Topic: "${todaysTopic}"`);
+    console.log(`\n🎯 Topic ${postNum}/2: "${todaysTopic}"`);
     console.log("🤖 Generating world-class SEO content...\n");
     
     let text = await generateWithRetry(prompt);
@@ -336,19 +344,27 @@ Output ONLY the markdown with frontmatter. No explanations, no preamble.`;
     const filename = `${today}-${slug}.md`;
     const filepath = path.join(__dirname, 'blog', filename);
     
-    // Check for duplicate (same day)
+    // Check for duplicate (same day + same slug)
     if (fs.existsSync(filepath)) {
-      console.log(`⚠️  Blog already exists for today: ${filename}`);
-      console.log("   Skipping to avoid duplicate content (bad for SEO).");
-      process.exit(0);
+      console.log(`⚠️  Blog already exists: ${filename}. Skipping.`);
+      continue;
     }
     
     fs.writeFileSync(filepath, text);
-    console.log(`✅ Daily blog post created: ${filename}`);
+    console.log(`✅ Blog post ${postNum}/2 created: ${filename}`);
     console.log(`📊 Word count: ~${text.split(/\s+/).length} words`);
-    
-    // Update sitemap with new post
+    postsCreated++;
+
+    // Small delay between posts to avoid back-to-back API hammering
+    if (postNum < 2) {
+      console.log('\n⏳ Waiting 10s before generating post 2...\n');
+      await new Promise(r => setTimeout(r, 10000));
+    }
+  }
+
+    // Update sitemap with all new posts
     updateSitemap();
+    console.log(`\n🎉 Done! ${postsCreated} blog post(s) created today.`);
     
   } catch (err) {
     console.error("❌ Failed to generate blog:", err);

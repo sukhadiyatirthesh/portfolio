@@ -115,49 +115,132 @@
   <link rel="stylesheet" href="/styles.css" />
   
   <style>
-    .blog-post { max-width: 800px; margin: 120px auto 60px; padding: 20px; color: var(--text); }
-    .blog-post h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--text-dark); line-height: 1.2; }
-    .blog-post h2 { margin-top: 45px; margin-bottom: 15px; color: var(--primary); font-size: 1.6rem; }
-    .blog-post h3 { margin-top: 30px; margin-bottom: 12px; font-size: 1.25rem; }
-    .blog-post p { margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.1rem; }
-    .blog-post ul, .blog-post ol { margin-bottom: 1.5rem; padding-left: 20px; }
-    .blog-post li { margin-bottom: 0.5rem; line-height: 1.7; }
-    .blog-post strong { color: var(--text-dark); }
-    .blog-post blockquote { border-left: 4px solid var(--primary); padding: 15px 20px; font-style: italic; opacity: 0.9; background: rgba(37, 99, 235, 0.05); border-radius: 0 8px 8px 0; margin: 20px 0; }
-    .blog-post img { max-width: 100%; height: auto; border-radius: 12px; margin: 25px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    .blog-post table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; }
-    .blog-post th, .blog-post td { padding: 12px 16px; border: 1px solid rgba(0,0,0,0.1); text-align: left; }
-    .blog-post th { background: rgba(37, 99, 235, 0.08); font-weight: 600; }
-    .blog-post a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
-    .blog-post a:hover { text-decoration-thickness: 2px; }
+    /* ── READING PROGRESS BAR ──────────────────────────── */
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), #7c3aed, #ec4899);
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
 
-    /* Breadcrumbs */
-    .breadcrumbs { font-size: 0.85rem; opacity: 0.7; margin-bottom: 20px; }
+    /* ── BLOG POST CORE ────────────────────────────────── */
+    .blog-post { max-width: 780px; margin: 120px auto 60px; padding: 20px; color: var(--text); }
+    .blog-post h1 { font-size: 2.6rem; margin-bottom: 12px; color: var(--text-dark); line-height: 1.2; letter-spacing: -0.02em; }
+    .blog-post h2 { margin-top: 50px; margin-bottom: 16px; color: var(--text-dark); font-size: 1.55rem; padding-bottom: 10px; border-bottom: 2px solid rgba(37, 99, 235, 0.12); }
+    .blog-post h3 { margin-top: 32px; margin-bottom: 12px; font-size: 1.2rem; color: var(--text-dark); }
+    .blog-post p { margin-bottom: 1.5rem; line-height: 1.85; font-size: 1.08rem; }
+    .blog-post ul, .blog-post ol { margin-bottom: 1.5rem; padding-left: 22px; }
+    .blog-post li { margin-bottom: 0.6rem; line-height: 1.75; }
+    .blog-post strong { color: var(--text-dark); }
+    .blog-post hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.2), transparent); margin: 40px 0; }
+
+    /* ── BLOCKQUOTES (PRO TIPS & WARNINGS) ──────────────── */
+    .blog-post blockquote {
+      border-left: 4px solid var(--primary);
+      padding: 18px 24px;
+      font-style: normal;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(124, 58, 237, 0.03));
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── TABLES ─────────────────────────────────────────── */
+    .blog-post table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 28px 0;
+      font-size: 0.92rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .blog-post th {
+      padding: 14px 18px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.08));
+      font-weight: 600;
+      text-align: left;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dark);
+    }
+    .blog-post td {
+      padding: 13px 18px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      text-align: left;
+    }
+    .blog-post tr:hover td {
+      background: rgba(37, 99, 235, 0.02);
+    }
+
+    /* ── LINKS ──────────────────────────────────────────── */
+    .blog-post a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(37, 99, 235, 0.3); transition: text-decoration-color 0.2s; }
+    .blog-post a:hover { text-decoration-color: var(--primary); }
+
+    /* ── BREADCRUMBS ────────────────────────────────────── */
+    .breadcrumbs { font-size: 0.82rem; opacity: 0.6; margin-bottom: 24px; }
     .breadcrumbs a { color: var(--primary); text-decoration: none; }
     .breadcrumbs a:hover { text-decoration: underline; }
     .breadcrumbs span { margin: 0 6px; }
 
-    /* Blog Meta */
-    .blog-meta-bar { display: flex; align-items: center; gap: 20px; font-size: 0.9rem; opacity: 0.7; margin-bottom: 25px; flex-wrap: wrap; }
+    /* ── BLOG META ──────────────────────────────────────── */
+    .blog-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.88rem;
+      opacity: 0.65;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      background: rgba(0,0,0,0.02);
+      border-radius: 10px;
+    }
     .blog-meta-bar .meta-item { display: flex; align-items: center; gap: 5px; }
 
-    /* Share Buttons */
-    .share-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.1); }
+    /* ── SHARE BUTTONS ──────────────────────────────────── */
+    .share-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.08); }
     .share-section h3 { font-size: 1.1rem; margin-bottom: 15px; color: var(--text-dark); }
     .share-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
-    .share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: transform 0.2s, box-shadow 0.2s; }
+    .share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 10px; text-decoration: none !important; font-size: 0.88rem; font-weight: 500; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
     .share-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
     .share-btn.twitter { background: #1DA1F2; color: #fff; }
     .share-btn.linkedin { background: #0077B5; color: #fff; }
     .share-btn.whatsapp { background: #25D366; color: #fff; }
-    .share-btn.copy-link { background: rgba(0,0,0,0.08); color: var(--text-dark); }
+    .share-btn.copy-link { background: rgba(0,0,0,0.06); color: var(--text-dark); }
 
-    /* Author Box */
-    .author-box { display: flex; gap: 20px; align-items: flex-start; margin-top: 40px; padding: 25px; background: rgba(37, 99, 235, 0.04); border: 1px solid rgba(37, 99, 235, 0.1); border-radius: 16px; }
-    .author-avatar { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #fff; flex-shrink: 0; }
-    .author-info h4 { margin: 0 0 5px; font-size: 1.1rem; }
-    .author-info p { margin: 0; font-size: 0.95rem; line-height: 1.6; opacity: 0.8; }
+    /* ── AUTHOR BOX ──────────────────────────────────────── */
+    .author-box {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-top: 40px;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.04), rgba(124, 58, 237, 0.03));
+      border: 1px solid rgba(37, 99, 235, 0.1);
+      border-radius: 16px;
+    }
+    .author-avatar { width: 65px; height: 65px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .author-info h4 { margin: 0 0 5px; font-size: 1.05rem; }
+    .author-info p { margin: 0; font-size: 0.92rem; line-height: 1.6; opacity: 0.8; }
     .author-info a { color: var(--primary); text-decoration: none; font-weight: 500; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .blog-post h1 { font-size: 1.8rem; }
+      .blog-post h2 { font-size: 1.3rem; }
+      .blog-post { padding: 14px; margin-top: 90px; }
+      .author-box { flex-direction: column; align-items: center; text-align: center; }
+      .blog-meta-bar { gap: 12px; }
+    }
   </style>
 
   <!-- Google Analytics -->
@@ -170,6 +253,9 @@
   </script>
 </head>
 <body>
+  <!-- READING PROGRESS BAR -->
+  <div class="reading-progress" id="reading-progress"></div>
+
   <!-- CURSOR -->
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
@@ -217,7 +303,7 @@
       </div>
       <div class="meta-item">
         <span>📖</span>
-        <span>8 min read</span>
+        <span id="read-time">8 min read</span>
       </div>
     </div>
     <hr style="margin: 0 0 30px; border: 1px solid rgba(0,0,0,0.08);">
@@ -285,5 +371,25 @@
     </div>
   </footer>
   <script src="/script.js" defer></script>
+  <script>
+    // Reading progress bar
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('reading-progress');
+      if (!bar) return;
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+    });
+    // Dynamic reading time
+    (function() {
+      const body = document.querySelector('[itemprop="articleBody"]');
+      const timeEl = document.getElementById('read-time');
+      if (body && timeEl) {
+        const words = body.textContent.trim().split(/\s+/).length;
+        const mins = Math.max(1, Math.ceil(words / 230));
+        timeEl.textContent = mins + ' min read';
+      }
+    })();
+  </script>
 </body>
 </html>
