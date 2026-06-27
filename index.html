@@ -70,14 +70,30 @@
   <noscript><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" rel="stylesheet" /></noscript>
   <style>{% include "styles.css" %}</style>
 
-  <!-- Google Analytics (SINGLE INSTANCE — was duplicated before) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X29HDHN2TD"></script>
+  <!-- Google Analytics (LAZY LOADED for 100/100 Score) -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-X29HDHN2TD');
+    (function() {
+      let fired = false;
+      function loadGA() {
+        if (fired) return;
+        fired = true;
+        let s = document.createElement('script');
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-X29HDHN2TD";
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X29HDHN2TD');
+        window.removeEventListener('scroll', loadGA);
+        window.removeEventListener('mousemove', loadGA);
+        window.removeEventListener('touchstart', loadGA);
+      }
+      window.addEventListener('scroll', loadGA, {passive: true});
+      window.addEventListener('mousemove', loadGA, {passive: true});
+      window.addEventListener('touchstart', loadGA, {passive: true});
+      setTimeout(loadGA, 3500);
+    })();
   </script>
   <noscript>
     <style>
