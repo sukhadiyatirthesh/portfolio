@@ -236,6 +236,18 @@ layout: landing-layout.html
         <h2>Fast, Secure & Conversion-Optimized Websites</h2>
         <p>A slow, poorly designed website will kill your ad campaigns before they even start. Your {{ pageData.city }} business deserves a digital storefront that converts.</p>
         <p>I build custom WordPress websites optimized for Core Web Vitals, seamless user experience, and technical SEO from day one. It's not just a website; it's a 24/7 sales machine.</p>
+      {% elif pageData.service == "Graphic Design" %}
+        <h2>Visually Stunning Brand Aesthetics</h2>
+        <p>In {{ pageData.city }}, your brand's visual identity is your first impression. Generic templates won't cut it anymore.</p>
+        <p>I design premium graphics, high-converting ad creatives, and scroll-stopping visuals that perfectly align with your brand's voice and psychology, turning casual viewers into loyal customers.</p>
+      {% elif pageData.service == "Video Editing" %}
+        <h2>High-Retention Video Storytelling</h2>
+        <p>Attention spans are shrinking. If your videos in {{ pageData.city }} don't hook the viewer in 3 seconds, they're gone.</p>
+        <p>I specialize in fast-paced editing, dynamic captions, and narrative storytelling for Reels, Shorts, and VSLs that maximize viewer retention and engagement.</p>
+      {% elif pageData.service == "Social Media Management" %}
+        <h2>Dominate the Feed in {{ pageData.city }}</h2>
+        <p>Posting randomly doesn't grow a business. You need a documented, data-driven content strategy.</p>
+        <p>From content calendars and viral hook scripting to community management and aesthetic grid layouts, I turn your social media profiles into organic lead generation machines.</p>
       {% else %}
         <h2>Expert {{ pageData.service }} Tailored For You</h2>
         <p>Transform your digital presence in {{ pageData.city }} with advanced {{ pageData.service }} strategies that prioritize actual revenue over vanity metrics.</p>
@@ -247,6 +259,10 @@ layout: landing-layout.html
         <li><strong style="color:var(--text);">✔ Performance First:</strong> Built for speed, conversions, and ranking.</li>
         <li><strong style="color:var(--text);">✔ Technical Excellence:</strong> Clean code and robust architecture.</li>
         <li><strong style="color:var(--text);">✔ Long-Term ROI:</strong> Assets that generate value for years.</li>
+        {% elif pageData.service == "Graphic Design" or pageData.service == "Video Editing" or pageData.service == "Social Media Management" %}
+        <li><strong style="color:var(--text);">✔ Premium Quality:</strong> High-end aesthetics and storytelling.</li>
+        <li><strong style="color:var(--text);">✔ Conversion Focused:</strong> Design that drives action, not just likes.</li>
+        <li><strong style="color:var(--text);">✔ Brand Alignment:</strong> Perfectly matched to your unique voice.</li>
         {% else %}
         <li><strong style="color:var(--text);">✔ Revenue First:</strong> Focused entirely on ROI and ROAS.</li>
         <li><strong style="color:var(--text);">✔ Transparent Reporting:</strong> Custom Looker Studio dashboards.</li>
@@ -268,6 +284,12 @@ layout: landing-layout.html
         <div style="font-size: 1.2rem; font-weight:600; margin-top:8px;">Google Rankings</div>
         <div style="font-size: 0.9rem; color:var(--text-muted); margin-top:16px; border-top: 1px solid var(--border); padding-top:16px;">
           Consistent organic visibility.
+        </div>
+        {% elif pageData.service == "Video Editing" or pageData.service == "Social Media Management" %}
+        <div style="font-size: 4rem; font-weight:800; color:var(--primary); line-height:1;">2x</div>
+        <div style="font-size: 1.2rem; font-weight:600; margin-top:8px;">Engagement Rate</div>
+        <div style="font-size: 0.9rem; color:var(--text-muted); margin-top:16px; border-top: 1px solid var(--border); padding-top:16px;">
+          Viral hooks and high-retention formats.
         </div>
         {% else %}
         <div style="font-size: 4rem; font-weight:800; color:var(--primary); line-height:1;">4.55X</div>
@@ -333,6 +355,28 @@ layout: landing-layout.html
         </div>
         <h3>White-Hat Only</h3>
         <p>No spammy links, no shady tactics. My strategies are fully aligned with Google's guidelines to protect you from algorithmic penalties.</p>
+      </div>
+      {% elif pageData.service == "Graphic Design" or pageData.service == "Video Editing" or pageData.service == "Social Media Management" %}
+      <div class="benefit-card reveal-up">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <h3>Premium Aesthetics</h3>
+        <p>Your brand deserves to look expensive. I use modern design principles to ensure your content stands out in a crowded feed.</p>
+      </div>
+      <div class="benefit-card reveal-up" style="transition-delay: 0.1s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        </div>
+        <h3>High Retention</h3>
+        <p>It's not just about looking good. My edits and designs are psychologically structured to hook viewers and keep them engaged.</p>
+      </div>
+      <div class="benefit-card reveal-up" style="transition-delay: 0.2s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3>Audience Growth</h3>
+        <p>I don't just post content; I build communities. Through strategic hashtag research and viral formats, we scale your audience exponentially.</p>
       </div>
       {% else %}
       <div class="benefit-card reveal-up">
@@ -412,6 +456,69 @@ layout: landing-layout.html
         <h3>Authority Building</h3>
         <p>Acquiring high-quality, relevant backlinks to signal trust to Google, steadily pushing your rankings to the top positions.</p>
       </div>
+      {% elif pageData.service == "Graphic Design" %}
+      <div class="process-step">
+        <span class="process-step-num">STEP 01</span>
+        <h3>Brand Discovery</h3>
+        <p>Understanding your core values, target demographic, and visual preferences to ensure every pixel aligns with your vision.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 02</span>
+        <h3>Concept Generation</h3>
+        <p>Drafting initial mood boards and structural concepts to establish the creative direction before detailed work begins.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 03</span>
+        <h3>Detailed Design</h3>
+        <p>Executing high-fidelity designs, focusing on typography, color psychology, and conversion-optimized layouts.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 04</span>
+        <h3>Refinement & Delivery</h3>
+        <p>Iterative revisions based on feedback, followed by final delivery in all necessary formats for print and digital.</p>
+      </div>
+      {% elif pageData.service == "Video Editing" %}
+      <div class="process-step">
+        <span class="process-step-num">STEP 01</span>
+        <h3>Footage Assembly</h3>
+        <p>Reviewing raw footage, selecting the best takes, and building the initial timeline structure for optimal pacing.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 02</span>
+        <h3>Dynamic Cutting</h3>
+        <p>Applying J/L cuts, removing dead space, and ensuring the video hooks the viewer within the first critical 3 seconds.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 03</span>
+        <h3>VFX & Sound Design</h3>
+        <p>Adding motion graphics, dynamic captions, color grading, and immersive sound effects to elevate production value.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 04</span>
+        <h3>Final Export</h3>
+        <p>Quality control check and exporting in optimal formats (e.g., 9:16 for Reels/Shorts, 16:9 for YouTube) ready for publishing.</p>
+      </div>
+      {% elif pageData.service == "Social Media Management" %}
+      <div class="process-step">
+        <span class="process-step-num">STEP 01</span>
+        <h3>Profile Audit</h3>
+        <p>Analyzing current engagement rates, audience demographics, and identifying content gaps in your current strategy.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 02</span>
+        <h3>Content Calendar</h3>
+        <p>Developing a 30-day strategy outlining post topics, formats (Reels, Carousels, Stories), and publishing schedules.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 03</span>
+        <h3>Content Production</h3>
+        <p>Designing aesthetics graphics, writing engaging captions, and researching high-reach hashtags for maximum visibility.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 04</span>
+        <h3>Community Engagement</h3>
+        <p>Active monitoring, replying to comments/DMs, and engaging with niche accounts to foster organic community growth.</p>
+      </div>
       {% else %}
       <div class="process-step">
         <span class="process-step-num">STEP 01</span>
@@ -483,6 +590,63 @@ layout: landing-layout.html
         <summary class="faq-summary">Do you do Local SEO for {{ pageData.city }} businesses?</summary>
         <div class="faq-content">
           Yes. Local SEO is highly effective for brick-and-mortar or service businesses. I optimize your Google Business Profile (GBP), manage local citations, and create hyper-localized content to dominate "near me" searches.
+        </div>
+      </details>
+      {% elif pageData.service == "Graphic Design" %}
+      <details class="faq-item" open>
+        <summary class="faq-summary">What types of design do you handle?</summary>
+        <div class="faq-content">
+          I handle everything from social media creatives, ad banners, and pitch decks to full brand identity design (logos, typography, color palettes) for businesses in {{ pageData.city }}.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Do you provide source files?</summary>
+        <div class="faq-content">
+          Yes, upon project completion and final payment, you will receive all high-resolution exports (PNG, PDF, SVG) as well as the original source files (PSD, AI, or Figma) for your records.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">How many revisions are included?</summary>
+        <div class="faq-content">
+          Most of my design packages include up to 2-3 rounds of revisions to ensure the final product perfectly aligns with your vision and brand standards.
+        </div>
+      </details>
+      {% elif pageData.service == "Video Editing" %}
+      <details class="faq-item" open>
+        <summary class="faq-summary">Do you edit Reels and TikToks?</summary>
+        <div class="faq-content">
+          Yes, short-form vertical video is one of my specialties. I edit high-retention Reels, Shorts, and TikToks using dynamic captions, fast cuts, and trending audio to maximize virality in {{ pageData.city }}.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">What do you need from me to start?</summary>
+        <div class="faq-content">
+          I need your raw footage (via Google Drive/Dropbox), any specific branding assets (logos, fonts), and a brief outline of the goal or style you're aiming for. I handle the rest.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Can you do motion graphics?</summary>
+        <div class="faq-content">
+          Yes, I integrate professional motion graphics, lower thirds, tracking text, and VFX elements to make your videos look highly produced and engaging.
+        </div>
+      </details>
+      {% elif pageData.service == "Social Media Management" %}
+      <details class="faq-item" open>
+        <summary class="faq-summary">Which platforms do you manage?</summary>
+        <div class="faq-content">
+          I specialize in managing Instagram, Facebook, LinkedIn, and Twitter (X) for brands in {{ pageData.city }}. We choose the platforms where your target audience is most active.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Do you create the content too?</summary>
+        <div class="faq-content">
+          Yes. As a full-stack manager, I write the captions, design the graphics, and edit the videos. You don't have to worry about sourcing content from multiple freelancers.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">How do you track success?</summary>
+        <div class="faq-content">
+          I provide monthly reports detailing follower growth, engagement rates, reach, and most importantly, the number of leads or website clicks generated from organic social media efforts.
         </div>
       </details>
       {% else %}

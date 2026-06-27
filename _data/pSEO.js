@@ -5,7 +5,10 @@ export default function() {
     { id: "meta-ads", name: "Meta Ads", short: "Meta Ads Specialist" },
     { id: "lead-generation", name: "Lead Generation", short: "Lead Gen Expert" },
     { id: "seo", name: "SEO", short: "SEO Expert" },
-    { id: "wordpress-website", name: "WordPress Website Development", short: "WordPress Developer" }
+    { id: "wordpress-website", name: "WordPress Website Development", short: "WordPress Developer" },
+    { id: "graphic-design", name: "Graphic Design", short: "Graphic Designer" },
+    { id: "video-editing", name: "Video Editing", short: "Video Editor" },
+    { id: "social-media-management", name: "Social Media Management", short: "Social Media Manager" }
   ];
 
   const cities = [
