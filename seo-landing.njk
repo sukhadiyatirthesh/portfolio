@@ -6,4 +6,365 @@ pagination:
 permalink: "services/{{ pageData.slug }}/index.html"
 layout: landing-layout.html
 ---
-<!-- Optional: Add dynamic content here based on {{ pageData.service }} or {{ pageData.city }} -->
+
+<style>
+  /* Premium Landing Content Styles */
+  .premium-section {
+    padding: 80px 0;
+    position: relative;
+    border-top: 1px solid var(--border);
+  }
+  .premium-section-alt {
+    background: var(--bg-alt);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+  }
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Why Choose Us Grid */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .benefit-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.1);
+  }
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
+  .benefit-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+  .benefit-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Dynamic Deep Dive Split */
+  .deep-dive {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  .deep-dive-text {
+    flex: 1;
+  }
+  .deep-dive-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    font-family: var(--font-heading);
+  }
+  .deep-dive-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .deep-dive-visual {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .deep-dive-visual::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, rgba(37, 99, 235, 0.1) 0%, transparent 60%);
+  }
+
+  /* Process Timeline */
+  .process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    position: relative;
+  }
+  .process-step {
+    text-align: left;
+    position: relative;
+    padding-top: 30px;
+    border-top: 2px dashed var(--border);
+  }
+  .process-step::before {
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .process-step-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .process-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .process-step p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* FAQs */
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-summary {
+    padding: 20px 24px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform 0.3s;
+  }
+  .faq-item[open] .faq-summary::after {
+    transform: rotate(45deg);
+  }
+  .faq-content {
+    padding: 0 24px 24px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .deep-dive { flex-direction: column; }
+    .process-timeline { grid-template-columns: 1fr; border-top: none; gap: 40px; }
+    .process-step { border-top: none; border-left: 2px dashed var(--border); padding-top: 0; padding-left: 30px; }
+    .process-step::before { top: 0; left: -9px; }
+  }
+</style>
+
+<!-- DYNAMIC DEEP DIVE SECTION -->
+<section class="premium-section">
+  <div class="container deep-dive">
+    <div class="deep-dive-text reveal-up">
+      {% if pageData.service == "Google Ads" %}
+        <h2>Stop Wasting Budget on Irrelevant Clicks</h2>
+        <p>In {{ pageData.city }}, the competition on Google is fierce. A poorly optimized campaign will drain your budget in days.</p>
+        <p>I specialize in hyper-targeted search intent, advanced negative keyword framing, and maximizing Quality Score. This means you pay less per click while acquiring high-intent customers who are actually ready to buy.</p>
+      {% elif pageData.service == "Meta Ads" %}
+        <h2>Scroll-Stopping Creatives That Actually Convert</h2>
+        <p>Running Meta Ads in {{ pageData.city }} requires more than just boosting a post. It requires a bulletproof funnel.</p>
+        <p>From testing creative angles to setting up advanced Pixel tracking and retargeting flows, I build Meta Ad campaigns that cut through the noise, lower your Cost Per Lead (CPL), and scale predictably.</p>
+      {% elif pageData.service == "Performance Marketing" %}
+        <h2>Omnichannel Scaling Strategies</h2>
+        <p>Scaling a brand in {{ pageData.city }} isn't about running ads on one platform. It's about full-funnel dominance.</p>
+        <p>I combine Google Ads, Meta Ads, and Conversion Rate Optimization (CRO) to build a growth engine. By focusing strictly on ROAS and data attribution, we ensure every rupee spent drives measurable revenue.</p>
+      {% elif pageData.service == "Lead Generation" %}
+        <h2>High-Quality Leads, Delivered Predictably</h2>
+        <p>Tired of calling unqualified leads? My lead generation system for {{ pageData.city }} businesses focuses strictly on intent.</p>
+        <p>By leveraging targeted landing pages, lead magnets, and strict audience filtration across multiple ad networks, I ensure your sales team spends time closing deals, not chasing dead ends.</p>
+      {% elif pageData.service == "SEO" %}
+        <h2>Dominate Organic Search in {{ pageData.city }}</h2>
+        <p>Ads stop working the moment you stop paying. SEO pays dividends for years.</p>
+        <p>I build robust Technical SEO, Programmatic SEO (pSEO), and Content Authority strategies that put your brand at the top of Google. Stop relying solely on paid ads and start capturing free, high-converting organic traffic.</p>
+      {% elif pageData.service == "WordPress Website Development" %}
+        <h2>Fast, Secure & Conversion-Optimized Websites</h2>
+        <p>A slow, poorly designed website will kill your ad campaigns before they even start. Your {{ pageData.city }} business deserves a digital storefront that converts.</p>
+        <p>I build custom WordPress websites optimized for Core Web Vitals, seamless user experience, and technical SEO from day one. It's not just a website; it's a 24/7 sales machine.</p>
+      {% else %}
+        <h2>Expert {{ pageData.service }} Tailored For You</h2>
+        <p>Transform your digital presence in {{ pageData.city }} with advanced {{ pageData.service }} strategies that prioritize actual revenue over vanity metrics.</p>
+        <p>I dive deep into data, track every conversion, and aggressively optimize to ensure you get the absolute best return on investment in your market.</p>
+      {% endif %}
+      
+      <ul style="list-style:none; padding:0; margin-top: 24px; color:var(--text-muted); display:flex; flex-direction:column; gap:12px;">
+        <li><strong style="color:var(--text);">✔ Revenue First:</strong> Focused entirely on ROI and ROAS.</li>
+        <li><strong style="color:var(--text);">✔ Transparent Reporting:</strong> Custom Looker Studio dashboards.</li>
+        <li><strong style="color:var(--text);">✔ Continuous Scaling:</strong> Daily optimizations and A/B testing.</li>
+      </ul>
+    </div>
+    
+    <div class="deep-dive-visual reveal-left">
+      <div style="text-align:center; z-index:1;">
+        <div style="font-size: 4rem; font-weight:800; color:var(--primary); line-height:1;">4.55X</div>
+        <div style="font-size: 1.2rem; font-weight:600; margin-top:8px;">Highest Achieved ROAS</div>
+        <div style="font-size: 0.9rem; color:var(--text-muted); margin-top:16px; border-top: 1px solid var(--border); padding-top:16px;">
+          Tested & Proven across highly competitive niches.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="premium-section premium-section-alt">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <h2>Why Businesses in {{ pageData.city }} Trust Me</h2>
+      <p>I don't just run campaigns; I partner with you to engineer predictable business growth.</p>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card reveal-up">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        </div>
+        <h3>Data-Driven Decisions</h3>
+        <p>No guesswork. Every budget allocation, audience targeting, and creative split-test is backed by hard data and rigorous analytics.</p>
+      </div>
+      
+      <div class="benefit-card reveal-up" style="transition-delay: 0.1s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <h3>Obsessed With ROAS</h3>
+        <p>Impressions and clicks mean nothing if they don't generate sales. My entire framework is optimized to maximize your Return on Ad Spend.</p>
+      </div>
+      
+      <div class="benefit-card reveal-up" style="transition-delay: 0.2s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>Advanced Tracking</h3>
+        <p>I implement foolproof GA4, Meta Pixel, and Server-Side tracking to ensure 100% attribution accuracy in a privacy-first world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR PROCESS -->
+<section class="premium-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <h2>The Growth Framework</h2>
+      <p>A systematic, 4-step approach to scaling your {{ pageData.serviceShort }} campaigns.</p>
+    </div>
+    
+    <div class="process-timeline reveal-up">
+      <div class="process-step">
+        <span class="process-step-num">STEP 01</span>
+        <h3>Deep Audit</h3>
+        <p>I analyze your past data, competitors, and website funnel to identify leaks and opportunities in your current setup.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 02</span>
+        <h3>Strategy & Tracking</h3>
+        <p>We build a custom strategy for {{ pageData.city }} audiences and ensure all conversion tracking is perfectly configured.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 03</span>
+        <h3>Campaign Launch</h3>
+        <p>Deployment of highly segmented campaigns with compelling ad copy, scroll-stopping creatives, and optimized landing pages.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 04</span>
+        <h3>Scale & Optimize</h3>
+        <p>Relentless daily monitoring, A/B testing, and budget reallocation to kill losing ads and scale the winners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQS -->
+<section class="premium-section premium-section-alt">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about my {{ pageData.service }} services in {{ pageData.city }}.</p>
+    </div>
+    
+    <div class="faq-container reveal-up">
+      <details class="faq-item" open>
+        <summary class="faq-summary">Do you guarantee results?</summary>
+        <div class="faq-content">
+          While no one can ethically guarantee specific ROAS due to external market factors, I do guarantee a strictly data-driven approach, 100% transparency, and relentless optimization. My past campaigns have achieved up to 4.55X ROAS using these exact frameworks.
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-summary">How long does it take to see results from {{ pageData.service }}?</summary>
+        <div class="faq-content">
+          {% if pageData.service == "SEO" %}
+            SEO is a long-term game. Typically, you will start seeing noticeable shifts in organic rankings within 3 to 6 months, depending on the competitiveness of your niche in {{ pageData.city }}.
+          {% elif pageData.service == "WordPress Website Development" %}
+            A standard, highly-optimized WordPress website usually takes 2 to 4 weeks from strategy phase to final deployment, ensuring all SEO and technical foundations are flawless.
+          {% else %}
+            For paid campaigns like {{ pageData.service }}, initial traction and data gathering take about 7 to 14 days. We enter the optimization and scaling phase within the first month.
+          {% endif %}
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-summary">Do you work with startups in {{ pageData.city }}?</summary>
+        <div class="faq-content">
+          Absolutely. Whether you are a fresh startup looking to establish a foothold or an established enterprise aiming to lower acquisition costs, I tailor the strategy to your specific budget and growth stage.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
