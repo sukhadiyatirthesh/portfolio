@@ -4,7 +4,8 @@ export default function() {
     { id: "google-ads", name: "Google Ads", short: "Google Ads Expert" },
     { id: "meta-ads", name: "Meta Ads", short: "Meta Ads Specialist" },
     { id: "lead-generation", name: "Lead Generation", short: "Lead Gen Expert" },
-    { id: "seo", name: "SEO", short: "SEO Expert" }
+    { id: "seo", name: "SEO", short: "SEO Expert" },
+    { id: "wordpress-website", name: "WordPress Website Development", short: "WordPress Developer" }
   ];
 
   const cities = [
