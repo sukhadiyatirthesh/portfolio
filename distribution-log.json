@@ -1,5 +1,51 @@
 [
   {
+    "timestamp": "2026-06-27T14:22:07.827Z",
+    "blog": {
+      "title": "WhatsApp Marketing + Paid Ads: The India Growth Hack Playbook",
+      "url": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-27-whatsapp-marketing-paid-ads-india-growth-hack/",
+      "date": "2026-06-27"
+    },
+    "summary": {
+      "total": 6,
+      "success": 1,
+      "failed": 5
+    },
+    "results": [
+      {
+        "platform": "linkedin",
+        "success": false,
+        "error": "Missing LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN"
+      },
+      {
+        "platform": "twitter_x",
+        "success": false,
+        "error": "Missing Twitter/X API credentials (need all 4 keys)"
+      },
+      {
+        "platform": "medium",
+        "success": false,
+        "error": "Missing MEDIUM_INTEGRATION_TOKEN"
+      },
+      {
+        "platform": "devto",
+        "success": true,
+        "url": "https://dev.to/sukhadiyatirthesh/whatsapp-marketing-paid-ads-the-india-growth-hack-playbook-3jh0",
+        "canonicalUrl": "https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-27-whatsapp-marketing-paid-ads-india-growth-hack/"
+      },
+      {
+        "platform": "reddit",
+        "success": false,
+        "error": "Missing Reddit credentials"
+      },
+      {
+        "platform": "pinterest",
+        "success": false,
+        "error": "Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID"
+      }
+    ]
+  },
+  {
     "timestamp": "2026-06-26T15:39:31.767Z",
     "blog": {
       "title": "Meta Ads Cost-Per-Lead Optimization: From ₹500 CPL to ₹80 CPL",

@@ -144,62 +144,7 @@ body:has(button:hover) .cursor {
   background: var(--secondary);
 }
 
-/* === LOADER === */
-.loader {
-  position: fixed;
-  inset: 0;
-  background: var(--bg);
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
 
-.loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.loader-inner {
-  text-align: center;
-}
-
-.loader-logo {
-  font-family: var(--font-heading);
-  font-size: 48px;
-  font-weight: 900;
-  color: var(--primary);
-  letter-spacing: -2px;
-  margin-bottom: 24px;
-  animation: logoPulse 1s ease infinite alternate;
-}
-
-@keyframes logoPulse {
-  from { opacity: 0.6; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.loader-bar {
-  width: 200px;
-  height: 2px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 2px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.loader-fill {
-  height: 100%;
-  background: var(--primary);
-  border-radius: 2px;
-  animation: loaderFill 0.4s ease forwards;
-}
-
-@keyframes loaderFill {
-  from { width: 0; }
-  to { width: 100%; }
-}
 
 /* === CONTAINER === */
 .container {

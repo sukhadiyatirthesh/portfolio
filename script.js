@@ -5,19 +5,11 @@
 'use strict';
 
 // ============================================================
-// LOADER
+// INITIALIZE ANIMATIONS FAST (Fixes crawler visibility)
 // ============================================================
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
-  if (!loader) return;
-  setTimeout(() => {
-    loader.classList.add('hidden');
-    document.body.style.overflow = '';
-    initAnimations();
-  }, 300); // Drastically reduced for near-instant load
+document.addEventListener('DOMContentLoaded', () => {
+  initAnimations();
 });
-
-document.body.style.overflow = 'hidden';
 
 // ============================================================
 // CUSTOM CURSOR
