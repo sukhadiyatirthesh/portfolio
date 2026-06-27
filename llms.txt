@@ -6,15 +6,15 @@
 I am Tirthesh Jain, a growth marketer helping businesses scale their revenue through data-driven performance marketing strategies.
 
 ## Services
-- Google Ads Management
-- Meta Ads Management
-- Lead Generation
-- Conversion Rate Optimization
-- E-commerce Scaling
+- [Google Ads Management](https://tirthesh-jain-portfolio.vercel.app/#expertise-section)
+- [Meta Ads Management](https://tirthesh-jain-portfolio.vercel.app/#expertise-section)
+- [Lead Generation](https://tirthesh-jain-portfolio.vercel.app/#expertise-section)
+- [Conversion Rate Optimization](https://tirthesh-jain-portfolio.vercel.app/#expertise-section)
+- [E-commerce Scaling](https://tirthesh-jain-portfolio.vercel.app/#expertise-section)
 
 ## Contact
-- Email: sukhadiyatirthesh5@gmail.com
-- Phone: +917383855518
+- Email: [sukhadiyatirthesh5@gmail.com](mailto:sukhadiyatirthesh5@gmail.com)
+- Phone: [+917383855518](tel:+917383855518)
 
 ## Forms
-- Contact Form: Available on the homepage `#contact` section for booking consultations. WebMCP annotations are included on the form.
+- Contact Form: Available on the [homepage contact section](https://tirthesh-jain-portfolio.vercel.app/#contact) for booking consultations. WebMCP annotations are included on the form.

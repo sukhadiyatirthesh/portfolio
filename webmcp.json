@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "tirthesh-portfolio": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everything"],
+      "env": {}
+    }
+  },
+  "tools": [
+    {
+      "name": "contact_tirthesh",
+      "description": "Submit a contact form to get in touch with Tirthesh Jain for marketing services.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The user's full name"
+          },
+          "email": {
+            "type": "string",
+            "description": "The user's email address"
+          },
+          "message": {
+            "type": "string",
+            "description": "The message or inquiry"
+          }
+        },
+        "required": ["name", "email", "message"]
+      }
+    }
+  ]
+}
