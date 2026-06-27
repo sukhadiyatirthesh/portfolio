@@ -243,19 +243,39 @@ layout: landing-layout.html
       {% endif %}
       
       <ul style="list-style:none; padding:0; margin-top: 24px; color:var(--text-muted); display:flex; flex-direction:column; gap:12px;">
+        {% if pageData.service == "WordPress Website Development" or pageData.service == "SEO" %}
+        <li><strong style="color:var(--text);">✔ Performance First:</strong> Built for speed, conversions, and ranking.</li>
+        <li><strong style="color:var(--text);">✔ Technical Excellence:</strong> Clean code and robust architecture.</li>
+        <li><strong style="color:var(--text);">✔ Long-Term ROI:</strong> Assets that generate value for years.</li>
+        {% else %}
         <li><strong style="color:var(--text);">✔ Revenue First:</strong> Focused entirely on ROI and ROAS.</li>
         <li><strong style="color:var(--text);">✔ Transparent Reporting:</strong> Custom Looker Studio dashboards.</li>
         <li><strong style="color:var(--text);">✔ Continuous Scaling:</strong> Daily optimizations and A/B testing.</li>
+        {% endif %}
       </ul>
     </div>
     
     <div class="deep-dive-visual reveal-left">
       <div style="text-align:center; z-index:1;">
+        {% if pageData.service == "WordPress Website Development" %}
+        <div style="font-size: 4rem; font-weight:800; color:var(--primary); line-height:1;">100</div>
+        <div style="font-size: 1.2rem; font-weight:600; margin-top:8px;">Core Web Vitals Score</div>
+        <div style="font-size: 0.9rem; color:var(--text-muted); margin-top:16px; border-top: 1px solid var(--border); padding-top:16px;">
+          Lightning fast, zero layout shift.
+        </div>
+        {% elif pageData.service == "SEO" %}
+        <div style="font-size: 4rem; font-weight:800; color:var(--primary); line-height:1;">Top 3</div>
+        <div style="font-size: 1.2rem; font-weight:600; margin-top:8px;">Google Rankings</div>
+        <div style="font-size: 0.9rem; color:var(--text-muted); margin-top:16px; border-top: 1px solid var(--border); padding-top:16px;">
+          Consistent organic visibility.
+        </div>
+        {% else %}
         <div style="font-size: 4rem; font-weight:800; color:var(--primary); line-height:1;">4.55X</div>
         <div style="font-size: 1.2rem; font-weight:600; margin-top:8px;">Highest Achieved ROAS</div>
         <div style="font-size: 0.9rem; color:var(--text-muted); margin-top:16px; border-top: 1px solid var(--border); padding-top:16px;">
           Tested & Proven across highly competitive niches.
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -266,10 +286,55 @@ layout: landing-layout.html
   <div class="container">
     <div class="section-header reveal-up">
       <h2>Why Businesses in {{ pageData.city }} Trust Me</h2>
-      <p>I don't just run campaigns; I partner with you to engineer predictable business growth.</p>
+      <p>I don't just execute tasks; I engineer predictable growth systems.</p>
     </div>
     
     <div class="benefits-grid">
+      {% if pageData.service == "WordPress Website Development" %}
+      <div class="benefit-card reveal-up">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Scalable Architecture</h3>
+        <p>Built on lightweight, secure frameworks that ensure your website won't break as your business traffic scales.</p>
+      </div>
+      <div class="benefit-card reveal-up" style="transition-delay: 0.1s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        </div>
+        <h3>Ultra-Fast Loading</h3>
+        <p>I optimize every image, script, and server request to guarantee load times under 2 seconds. Don't lose customers to a spinning wheel.</p>
+      </div>
+      <div class="benefit-card reveal-up" style="transition-delay: 0.2s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3>Built for Conversions</h3>
+        <p>A website isn't an art project. It's a sales funnel. I design user journeys that push visitors directly toward making a purchase or inquiry.</p>
+      </div>
+      {% elif pageData.service == "SEO" %}
+      <div class="benefit-card reveal-up">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <h3>Technical Perfection</h3>
+        <p>Before writing a single blog, I fix underlying technical issues, crawl errors, and schema markups to ensure Google loves your site.</p>
+      </div>
+      <div class="benefit-card reveal-up" style="transition-delay: 0.1s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <h3>Content Authority</h3>
+        <p>I build programmatic and editorial content engines that establish your brand as the undisputed authority in your niche.</p>
+      </div>
+      <div class="benefit-card reveal-up" style="transition-delay: 0.2s;">
+        <div class="benefit-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+        </div>
+        <h3>White-Hat Only</h3>
+        <p>No spammy links, no shady tactics. My strategies are fully aligned with Google's guidelines to protect you from algorithmic penalties.</p>
+      </div>
+      {% else %}
       <div class="benefit-card reveal-up">
         <div class="benefit-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
@@ -277,7 +342,6 @@ layout: landing-layout.html
         <h3>Data-Driven Decisions</h3>
         <p>No guesswork. Every budget allocation, audience targeting, and creative split-test is backed by hard data and rigorous analytics.</p>
       </div>
-      
       <div class="benefit-card reveal-up" style="transition-delay: 0.1s;">
         <div class="benefit-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
@@ -285,7 +349,6 @@ layout: landing-layout.html
         <h3>Obsessed With ROAS</h3>
         <p>Impressions and clicks mean nothing if they don't generate sales. My entire framework is optimized to maximize your Return on Ad Spend.</p>
       </div>
-      
       <div class="benefit-card reveal-up" style="transition-delay: 0.2s;">
         <div class="benefit-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -293,6 +356,7 @@ layout: landing-layout.html
         <h3>Advanced Tracking</h3>
         <p>I implement foolproof GA4, Meta Pixel, and Server-Side tracking to ensure 100% attribution accuracy in a privacy-first world.</p>
       </div>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -301,20 +365,63 @@ layout: landing-layout.html
 <section class="premium-section">
   <div class="container">
     <div class="section-header reveal-up">
-      <h2>The Growth Framework</h2>
-      <p>A systematic, 4-step approach to scaling your {{ pageData.serviceShort }} campaigns.</p>
+      <h2>The Execution Framework</h2>
+      <p>A systematic approach to delivering high-end {{ pageData.service }} for your business.</p>
     </div>
     
     <div class="process-timeline reveal-up">
+      {% if pageData.service == "WordPress Website Development" %}
       <div class="process-step">
         <span class="process-step-num">STEP 01</span>
-        <h3>Deep Audit</h3>
-        <p>I analyze your past data, competitors, and website funnel to identify leaks and opportunities in your current setup.</p>
+        <h3>Discovery & Strategy</h3>
+        <p>We map out your business goals, target audience, and required functionalities to create a comprehensive site map and user journey.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 02</span>
+        <h3>UI/UX Design</h3>
+        <p>Creating high-fidelity mockups that reflect your brand identity while focusing on premium aesthetics and conversion principles.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 03</span>
+        <h3>Custom Development</h3>
+        <p>Writing clean, semantic HTML/CSS and configuring WordPress CMS so you have a blazingly fast and easily editable website.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 04</span>
+        <h3>Testing & Launch</h3>
+        <p>Rigorous QA testing across all devices, speed optimization, technical SEO setup, and finally, a seamless deployment to your live server.</p>
+      </div>
+      {% elif pageData.service == "SEO" %}
+      <div class="process-step">
+        <span class="process-step-num">STEP 01</span>
+        <h3>Technical Audit</h3>
+        <p>Deep dive into your current site structure, identifying indexing issues, slow pages, and penalty risks that are holding you back.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 02</span>
+        <h3>Keyword Strategy</h3>
+        <p>Researching high-intent, low-competition keywords specific to your industry and mapping them to landing pages and editorial content.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 03</span>
+        <h3>On-Page & Content</h3>
+        <p>Optimizing meta tags, internal linking, and publishing authoritative content that answers exactly what your customers are searching for.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-step-num">STEP 04</span>
+        <h3>Authority Building</h3>
+        <p>Acquiring high-quality, relevant backlinks to signal trust to Google, steadily pushing your rankings to the top positions.</p>
+      </div>
+      {% else %}
+      <div class="process-step">
+        <span class="process-step-num">STEP 01</span>
+        <h3>Funnel Audit</h3>
+        <p>I analyze your past ad data, competitors, and website conversion rates to identify leaks and opportunities in your current setup.</p>
       </div>
       <div class="process-step">
         <span class="process-step-num">STEP 02</span>
         <h3>Strategy & Tracking</h3>
-        <p>We build a custom strategy for {{ pageData.city }} audiences and ensure all conversion tracking is perfectly configured.</p>
+        <p>We build a custom strategy for {{ pageData.city }} audiences and ensure all conversion tracking (Pixel, Conversions API) is perfectly configured.</p>
       </div>
       <div class="process-step">
         <span class="process-step-num">STEP 03</span>
@@ -324,8 +431,9 @@ layout: landing-layout.html
       <div class="process-step">
         <span class="process-step-num">STEP 04</span>
         <h3>Scale & Optimize</h3>
-        <p>Relentless daily monitoring, A/B testing, and budget reallocation to kill losing ads and scale the winners.</p>
+        <p>Relentless daily monitoring, A/B testing, and budget reallocation to kill losing ads and scale the winning ones aggressively.</p>
       </div>
+      {% endif %}
     </div>
   </div>
 </section>
@@ -339,32 +447,64 @@ layout: landing-layout.html
     </div>
     
     <div class="faq-container reveal-up">
+      {% if pageData.service == "WordPress Website Development" %}
       <details class="faq-item" open>
-        <summary class="faq-summary">Do you guarantee results?</summary>
+        <summary class="faq-summary">Will the website be mobile-friendly and fast?</summary>
+        <div class="faq-content">
+          Absolutely. Every WordPress site I build follows a "mobile-first" approach. I also ensure rigorous optimization so the site scores 90+ on Google PageSpeed Insights, ensuring zero lag for your mobile users.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">How long does it take to build a custom WordPress site?</summary>
+        <div class="faq-content">
+          A standard, highly-optimized WordPress website usually takes 2 to 4 weeks from the initial strategy phase to final deployment. E-commerce or highly complex portals may take slightly longer.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Can I manage the content myself after launch?</summary>
+        <div class="faq-content">
+          Yes. I build the backend with user-friendly custom fields and block editors, allowing you or your team to easily update text, images, and blog posts without touching a single line of code.
+        </div>
+      </details>
+      {% elif pageData.service == "SEO" %}
+      <details class="faq-item" open>
+        <summary class="faq-summary">How long does it take to see results from SEO?</summary>
+        <div class="faq-content">
+          SEO is a long-term investment. Typically, you will start seeing noticeable shifts in organic rankings and traffic within 3 to 6 months, depending on the competitiveness of your niche and the age of your domain.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Are your SEO practices safe from Google penalties?</summary>
+        <div class="faq-content">
+          100%. I strictly adhere to White-Hat SEO techniques. I focus on creating helpful content, building genuine authority, and ensuring technical perfection. No spammy links or black-hat tactics that risk a Google penalty.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-summary">Do you do Local SEO for {{ pageData.city }} businesses?</summary>
+        <div class="faq-content">
+          Yes. Local SEO is highly effective for brick-and-mortar or service businesses. I optimize your Google Business Profile (GBP), manage local citations, and create hyper-localized content to dominate "near me" searches.
+        </div>
+      </details>
+      {% else %}
+      <details class="faq-item" open>
+        <summary class="faq-summary">Do you guarantee specific ROAS or leads?</summary>
         <div class="faq-content">
           While no one can ethically guarantee specific ROAS due to external market factors, I do guarantee a strictly data-driven approach, 100% transparency, and relentless optimization. My past campaigns have achieved up to 4.55X ROAS using these exact frameworks.
         </div>
       </details>
-      
       <details class="faq-item">
         <summary class="faq-summary">How long does it take to see results from {{ pageData.service }}?</summary>
         <div class="faq-content">
-          {% if pageData.service == "SEO" %}
-            SEO is a long-term game. Typically, you will start seeing noticeable shifts in organic rankings within 3 to 6 months, depending on the competitiveness of your niche in {{ pageData.city }}.
-          {% elif pageData.service == "WordPress Website Development" %}
-            A standard, highly-optimized WordPress website usually takes 2 to 4 weeks from strategy phase to final deployment, ensuring all SEO and technical foundations are flawless.
-          {% else %}
-            For paid campaigns like {{ pageData.service }}, initial traction and data gathering take about 7 to 14 days. We enter the optimization and scaling phase within the first month.
-          {% endif %}
+          For paid campaigns like {{ pageData.service }}, initial traction and data gathering take about 7 to 14 days. We enter the aggressive optimization and scaling phase within the first month once we identify the winning audiences and creatives.
         </div>
       </details>
-      
       <details class="faq-item">
-        <summary class="faq-summary">Do you work with startups in {{ pageData.city }}?</summary>
+        <summary class="faq-summary">What ad budget do you recommend for businesses in {{ pageData.city }}?</summary>
         <div class="faq-content">
-          Absolutely. Whether you are a fresh startup looking to establish a foothold or an established enterprise aiming to lower acquisition costs, I tailor the strategy to your specific budget and growth stage.
+          The ideal starting budget depends on your niche and average order value (AOV). However, I recommend a minimum starting budget of ₹50,000 to ₹1,00,000 per month so we have enough data velocity to exit the learning phase quickly.
         </div>
       </details>
+      {% endif %}
     </div>
   </div>
 </section>
