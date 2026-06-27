@@ -238,13 +238,27 @@
             <input type="tel" name="phone" class="form-input" placeholder="+91 XXXXX XXXXX" required>
           </div>
           <div class="form-group">
+            <label class="form-label">Service Interested In</label>
+            <select name="service_interest" class="form-select" required>
+              <option value="{{ pageData.service }}" selected>{{ pageData.service }}</option>
+              <option value="Google Ads">Google Ads</option>
+              <option value="Meta Ads">Meta Ads</option>
+              <option value="Performance Marketing">Performance Marketing</option>
+              <option value="Lead Generation">Lead Generation</option>
+              <option value="SEO">SEO</option>
+              <option value="Not Sure Yet / Consultation">Not Sure Yet / Consultation</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label class="form-label">Monthly Ad Spend</label>
             <select name="ad_spend" class="form-select" required>
               <option value="" disabled selected>Select Budget...</option>
+              <option value="starting-fresh">Starting Fresh / Not Started</option>
               <option value="under-1L">Under ₹1 Lakh</option>
               <option value="1L-5L">₹1 Lakh - ₹5 Lakh</option>
               <option value="5L-10L">₹5 Lakh - ₹10 Lakh</option>
               <option value="10L+">₹10 Lakh+</option>
+              <option value="not-applicable">Not Applicable (e.g. SEO)</option>
             </select>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Request Audit</button>
