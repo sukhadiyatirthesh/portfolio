@@ -52,7 +52,7 @@ async function pushToGitHub() {
           name: 'Tirthesh Jain',
           email: 'sukhadiyatirthesh5@gmail.com',
         },
-        message: '📸 Forced ultra-realistic DSLR photography style & banned AI text in generated blog images'
+        message: 'Fix GA4 data collection firing (fallback with setTimeout)'
       });
       console.log("Committed:", commitId);
     } catch(e) {
