@@ -1,0 +1,49 @@
+name: "🤖 Daily AI Blog Auto-Publisher"
+
+on:
+  schedule:
+    # Runs DAILY at 12:00 AM UTC (≈ 5:30 AM IST) — Fresh content every morning
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-blog:
+    name: Generate & Publish Daily AI Blog Post
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "📥 Checkout Repository"
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "🔧 Setup Node.js 20"
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: "📦 Install Dependencies"
+        run: npm ci
+
+      - name: "🤖 Generate AI Blog Post"
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node content-engine.js
+
+      - name: "📤 Commit & Push New Blog"
+        run: |
+          git config --global user.name  "AI Content Engine"
+          git config --global user.email "ai-bot@tirtheshjain.com"
+          git add blog/ sitemap.xml
+          git diff --quiet && git diff --staged --quiet || \
+            (git commit -m "🤖 Daily Blog: $(date '+%Y-%m-%d') — AI SEO Pillar Post" && git push)
+
+      - name: "🔔 Ping Google & Bing — Sitemap Submitted"
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://tirthesh-jain-portfolio.vercel.app/sitemap.xml" || true
+          curl -s "https://www.bing.com/ping?sitemap=https://tirthesh-jain-portfolio.vercel.app/sitemap.xml" || true
+          echo "✅ Search engines notified of new content"
