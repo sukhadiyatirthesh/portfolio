@@ -52,7 +52,7 @@ async function pushToGitHub() {
           name: 'Tirthesh Jain',
           email: 'sukhadiyatirthesh5@gmail.com',
         },
-        message: 'Fix GA4 data collection firing (fallback with setTimeout)'
+        message: 'Add GitHub Actions workflows for SEO and blog automation'
       });
       console.log("Committed:", commitId);
     } catch(e) {
