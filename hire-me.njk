@@ -21,26 +21,26 @@ permalink: "/hire-me/"
   <style>
     /* Custom Overrides for Recruiter Page */
     .recruiter-hero {
-      padding: 160px 0 80px;
+      padding: clamp(100px, 15vw, 160px) 0 clamp(40px, 8vw, 80px);
       text-align: center;
       background: var(--bg);
     }
     .recruiter-headline {
-      font-size: clamp(40px, 5vw, 64px);
+      font-size: clamp(32px, 6vw, 64px);
       font-family: var(--font-heading);
       margin-bottom: 24px;
       letter-spacing: -1px;
     }
     .core-skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 32px;
       margin-top: 60px;
     }
     .skill-card {
       background: var(--bg-alt);
       border: 1px solid var(--border);
-      padding: 40px;
+      padding: clamp(24px, 5vw, 40px);
       border-radius: var(--radius-md);
       transition: transform 0.2s;
     }
@@ -57,6 +57,31 @@ permalink: "/hire-me/"
     }
     .nav-recruiter {
       justify-content: space-between;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .why-hire-wrapper {
+      background: var(--bg-alt);
+      border-radius: 24px;
+      padding: clamp(30px, 6vw, 60px);
+      border: 1px solid var(--border);
+    }
+    .why-hire-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .why-hire-grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 60px;
+      }
     }
   </style>
 </head>
@@ -96,7 +121,7 @@ permalink: "/hire-me/"
         <p class="section-subtitle" style="max-width: 800px; margin: 0 auto;">
           I am a data-driven Growth Marketer specializing in managing high-budget Meta & Google Ads campaigns, coupled with technical SEO to drive sustainable, measurable revenue.
         </p>
-        <div class="hero-actions" style="justify-content: center; margin-top: 40px; display: flex; gap: 16px;">
+        <div class="hero-actions">
           <a href="mailto:sukhadiyatirthesh5@gmail.com" class="btn btn-primary magnetic-btn">
             ✉️ Contact Me Directly
           </a>
@@ -140,11 +165,11 @@ permalink: "/hire-me/"
 
     <!-- HIGHLIGHTS / WHY ME -->
     <section class="section container">
-      <div style="background: var(--bg-alt); border-radius: 24px; padding: 60px; border: 1px solid var(--border);">
+      <div class="why-hire-wrapper">
         <div class="section-header reveal-up" style="margin-bottom: 40px;">
           <h2 class="section-title">Why Hire Me?</h2>
         </div>
-        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: center;">
+        <div class="why-hire-grid">
           <div class="reveal-left">
             <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px;">
               <li style="display: flex; gap: 16px; align-items: flex-start;">
