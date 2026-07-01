@@ -24,3 +24,5 @@ _site
 *.njsproj
 *.sln
 *.sw?
+gcp-credentials.json
+*-credentials.json

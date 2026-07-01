@@ -20,10 +20,10 @@ const SITE_URL = 'https://tirthesh-jain-portfolio.vercel.app';
 // ── RETRY WITH BACKOFF ────────────────────────────────────────────────────────
 async function generateWithRetry(prompt, maxRetries = 3) {
   const models = [
-    'gemini-1.5-flash',
+    'gemini-2.5-flash',
     'gemini-2.0-flash', 
-    'gemini-2.0-flash-lite',
-    'gemini-1.5-flash-8b'
+    'gemini-1.5-pro',
+    'gemini-1.5-flash'
   ];
   
   for (const modelName of models) {
@@ -41,11 +41,9 @@ async function generateWithRetry(prompt, maxRetries = 3) {
           const waitMs = Math.pow(2, attempt) * 10000; // 20s, 40s, 80s
           console.log(`⏳ Rate limited on ${modelName}. Waiting ${waitMs/1000}s (attempt ${attempt}/${maxRetries})...`);
           await new Promise(r => setTimeout(r, waitMs));
-        } else if (isRateLimit && attempt === maxRetries) {
-          console.log(`⚠️  ${modelName} quota exhausted. Trying next model...`);
-          break; // Try next model
         } else {
-          throw err; // Non-rate-limit error, throw immediately
+          console.log(`⚠️  Failed on ${modelName} (Error: ${err.status || err.message}). Trying next model...`);
+          break; // Try next model on any other error or if retries exhausted
         }
       }
     }

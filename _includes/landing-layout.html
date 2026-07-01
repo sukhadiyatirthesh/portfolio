@@ -1,4 +1,4 @@
-H<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -18,28 +18,93 @@ H<!DOCTYPE html>
   <meta property="og:description" content="{{ pageData.description }}" />
   <meta property="og:site_name" content="Tirthesh Jain — Performance Marketer" />
   <meta property="og:locale" content="en_IN" />
-  
-  <!-- LOCAL BUSINESS SCHEMA.ORG (CRITICAL FOR "NEAR ME" SEARCHES) -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tirthesh Jain - {{ pageData.serviceShort }}" />
+
+  <!-- TWITTER -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/" />
+  <meta property="twitter:title" content="{{ pageData.title }}" />
+  <meta property="twitter:description" content="{{ pageData.description }}" />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200" />
+
+  <!-- ADVANCED CONNECTED SCHEMA.ORG GRAPH -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Tirthesh Jain - {{ pageData.serviceShort }} in {{ pageData.city }}",
-    "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800",
-    "description": "{{ pageData.description }}",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "{{ pageData.city }}",
-      "addressCountry": "IN"
-    },
-    "url": "https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/",
-    "telephone": "+917383855518",
-    "email": "sukhadiyatirthesh5@gmail.com",
-    "priceRange": "$$"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/#website",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/",
+        "name": "Tirthesh Jain Portfolio",
+        "publisher": {
+          "@id": "https://tirthesh-jain-portfolio.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/#organization",
+        "name": "Tirthesh Jain - Performance Marketing",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/#localbusiness",
+        "name": "Tirthesh Jain - {{ pageData.serviceShort }} in {{ pageData.city }}",
+        "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800",
+        "description": "{{ pageData.description }}",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/",
+        "telephone": "+917383855518",
+        "email": "sukhadiyatirthesh5@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "{{ pageData.city }}",
+          "addressCountry": "IN"
+        },
+        "parentOrganization": {
+          "@id": "https://tirthesh-jain-portfolio.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://tirthesh-jain-portfolio.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://tirthesh-jain-portfolio.vercel.app/#services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ pageData.serviceShort }} in {{ pageData.city }}",
+            "item": "https://tirthesh-jain-portfolio.vercel.app/services/{{ pageData.slug }}/"
+          }
+        ]
+      }
+    ]
   }
   </script>
 
-  <!-- FONTS & STYLES -->
+  <!-- FONTS & PRECONNECTS (Core Web Vitals) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
                 <style>{% include "styles.css" %}</style>
 
   <!-- Google Analytics (LAZY LOADED for 100/100 Score) -->
@@ -153,6 +218,31 @@ H<!DOCTYPE html>
       color: var(--primary);
     }
     
+    .seo-breadcrumb {
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+    }
+    .seo-breadcrumb ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 8px;
+      color: var(--text-muted);
+    }
+    .seo-breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .seo-breadcrumb a:hover {
+      color: var(--primary);
+    }
+    .seo-breadcrumb [aria-current="page"] {
+      color: var(--text);
+      font-weight: 500;
+    }
+    
     @media (max-width: 900px) {
       .seo-hero {
         flex-direction: column;
@@ -215,6 +305,15 @@ H<!DOCTYPE html>
   <main id="main-content">
     <section class="seo-hero container">
       <div class="seo-hero-content reveal-up">
+        <nav aria-label="breadcrumb" class="seo-breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li><a href="/#services">Services</a></li>
+            <li><span aria-hidden="true">/</span></li>
+            <li aria-current="page">{{ pageData.serviceShort }} in {{ pageData.city }}</li>
+          </ol>
+        </nav>
         <div class="seo-badge">
           <span class="badge-dot" style="background:#10b981;"></span>
           #1 {{ pageData.serviceShort }} in {{ pageData.city }}

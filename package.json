@@ -16,10 +16,12 @@
   "main": "script.js",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@google-analytics/data": "^6.1.0",
     "@google/generative-ai": "^0.24.1",
     "dotenv": "^17.4.2",
     "esbuild": "^0.27.3",
     "fdir": "^6.5.0",
+    "googleapis": "^173.0.0",
     "isomorphic-git": "^1.38.5",
     "nanoid": "^3.3.11",
     "picocolors": "^1.1.1",

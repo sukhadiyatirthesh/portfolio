@@ -17,11 +17,15 @@
   <link rel="canonical" href="https://tirthesh-jain-portfolio.vercel.app/" />
   
   <!-- OPEN GRAPH / FACEBOOK -->
-  <meta property="og:type" content="profile" />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://tirthesh-jain-portfolio.vercel.app/" />
   <meta property="og:title" content="Tirthesh Jain | Best Performance Marketer in Ahmedabad" />
   <meta property="og:description"
     content="Driving Business Growth Through Paid Advertising. Hire Ahmedabad's top Google Ads & Meta Ads expert." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Tirthesh Jain - Performance Marketer" />
 
   <!-- TWITTER -->
   <meta property="twitter:card" content="summary_large_image" />
@@ -29,38 +33,94 @@
   <meta property="twitter:title" content="Tirthesh Jain | Best Performance Marketer in Ahmedabad" />
   <meta property="twitter:description"
     content="Driving Business Growth Through Paid Advertising. Hire Ahmedabad's top Google Ads & Meta Ads expert." />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1200" />
 
-  <!-- LOCAL BUSINESS SCHEMA.ORG (CRITICAL FOR "NEAR ME" SEARCHES) -->
+  <!-- ADVANCED CONNECTED SCHEMA.ORG GRAPH -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Tirthesh Jain - Performance Marketing Specialist",
-    "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800",
-    "description": "Best performance marketer and Paid Media Specialist providing Google Ads, Meta Ads, and Growth Marketing services.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ahmedabad",
-      "addressRegion": "Gujarat",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "23.0225",
-      "longitude": "72.5714"
-    },
-    "url": "https://tirthesh-jain-portfolio.vercel.app/",
-    "telephone": "+917383855518",
-    "email": "sukhadiyatirthesh5@gmail.com",
-    "priceRange": "$$",
-    "sameAs": [
-      "https://www.linkedin.com/in/tirthesh-jain-a5136a274"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/#website",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/",
+        "name": "Tirthesh Jain Portfolio",
+        "description": "Best performance marketer and Paid Media Specialist in Ahmedabad.",
+        "publisher": {
+          "@id": "https://tirthesh-jain-portfolio.vercel.app/#organization"
+        },
+        "potentialAction": [{
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://tirthesh-jain-portfolio.vercel.app/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/#organization",
+        "name": "Tirthesh Jain - Performance Marketing",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800"
+        },
+        "founder": {
+          "@id": "https://tirthesh-jain-portfolio.vercel.app/#person"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-7383855518",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi"]
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/#person",
+        "name": "Tirthesh Jain",
+        "jobTitle": "Performance Marketing Specialist",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/",
+        "sameAs": [
+          "https://www.linkedin.com/in/tirthesh-jain-a5136a274"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://tirthesh-jain-portfolio.vercel.app/#localbusiness",
+        "name": "Tirthesh Jain - Paid Media Specialist",
+        "image": "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=800",
+        "description": "Expert in Google Ads, Meta Ads, PPC, and Growth Marketing based in Ahmedabad.",
+        "url": "https://tirthesh-jain-portfolio.vercel.app/",
+        "telephone": "+917383855518",
+        "email": "sukhadiyatirthesh5@gmail.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "23.0225",
+          "longitude": "72.5714"
+        },
+        "parentOrganization": {
+          "@id": "https://tirthesh-jain-portfolio.vercel.app/#organization"
+        }
+      }
     ]
   }
   </script>
 
-  <!-- FONTS: Non-render-blocking via preconnect + link (NOT CSS @import) -->
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+  <!-- FONTS & PRECONNECTS (Core Web Vitals) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
           <style>{% include "styles.css" %}</style>
 
   <!-- Google Analytics (LAZY LOADED for 100/100 Score) -->
