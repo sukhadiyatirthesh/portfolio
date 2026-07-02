@@ -4,15 +4,27 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/blog/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-07-02-whatsapp-marketing-paid-ads-india-growth-hack-playbook-2026/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-07-02-meta-ads-b2b-lead-gen-the-2026-linkedin-killer-framework/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-06-29-marketing-mix-modeling-for-startups-ultimate-2026-guide/</loc>
