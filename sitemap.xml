@@ -4,15 +4,27 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/blog/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-07-18-whatsapp-marketing-paid-ads-india-s-ultimate-2026-growth-hack/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-07-18-ga4-advanced-setup-ultimate-2026-guide-to-custom-events-predictive/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-07-16-performance-marketing-for-saas-ultimate-2026-trial-to-paid-guide/</loc>
