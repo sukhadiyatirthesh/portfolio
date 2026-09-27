@@ -4,15 +4,27 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/blog/</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-09-27-technical-seo-audit-checklist-2026-core-web-vitals-framework/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-09-27-marketing-mix-modeling-for-startups-the-ultimate-budget-allocation-guide-2026/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tirthesh-jain-portfolio.vercel.app/blog/2026-09-24-meta-ads-advantage-shopping-2026-ultimate-scaling-framework/</loc>
